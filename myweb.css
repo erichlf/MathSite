@@ -1,76 +1,64 @@
 body {
-	background: #6e0f0d;
+	background: #fff;
 	margin: 0;
 	padding: 0;
 	font: 10px normal Verdana, Arial, Helvetica, sans-serif;
-	color: #444;
+	color: #000;
 }
-h1 {font-size: 3em; margin: 20px 0;}
-.container {width: 565px; margin: 10px auto;}
+h1 {
+  font-size: 3em;
+  margin: 20px 0;
+}
+.container {
+  width: 565px;
+  margin: 10px auto;
+}
+.tabs {
+  float: left;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #000;
+  overflow: hidden;
+  position: relative;
+}
 ul.tabs {
-	margin: 0;
-	padding: 0;
+  clear: left;
 	float: left;
 	list-style: none;
-	height: 22px;
-	width: 100%;
-}
-ul.tabs li {
-	float: left;
 	margin: 0;
 	padding: 0;
-	height: 21px;
-	line-height: 21px;
-	border: 1px solid #999;
-	border-left: none;
-	margin-bottom: -1px;
-	background: #ff6600;
+  position: relative;
+  text-align: center;
+	height: 22px;
+}
+ul.tabs li {
+  display: block;
+	float: left;
+  list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
 	overflow: hidden;
 	position: relative;
-	-moz-border-radius: .75em .75em 0em 0em;
-	border-radius-topleft: .75em;
-	border-radius-topright: .75em;
-	border: 1px solid #999;
+  left: 15%;
 }
 ul.tabs li a {
-	text-decoration: none;
-	color: #6e0f0d;
 	display: block;
+	text-decoration: none;
+	color: #000;
 	font-size: 1.3em;
-	padding: 0 20px;
-	-moz-border-radius: .75em .75em 0em 0em;
-	border-radius-topleft: .75em;
-	border-radius-topright: .75em;
-	/*border: 1px solid #fff;*/
-	outline: none;
+	padding: 3px 20px;
 }
 ul.tabs li a:hover {
-	-moz-border-radius: .75em .75em 0em 0em;
-	border-radius-topleft: .75em;
-	border-radius-topright: .75em;
-	background: #ff8800;
-}	
+  font-weight: bold;
+}
 html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover  {
-	background: #fff;
-	color: #000;
-	border-bottom: 1px solid #fff;
+  font-weight: bold;
 }
 .tab_container {
-	border: 1px solid #999;
-	border-top: none;
-	clear: both;
-	float: left; 
 	width: 100%;
 	background: #fff;
-	-moz-border-radius-bottomright: 5px;
-	-khtml-border-radius-bottomright: 5px;
-	-webkit-border-bottom-right-radius: 5px;
-	-moz-border-radius-bottomleft: 5px;
-	-khtml-border-radius-bottomleft: 5px;
-	-webkit-border-bottom-left-radius: 5px;
-	-moz-border-radius-topright: 5px;
-	-khtml-border-radius-topright: 5px;
-	-webkit-border-top-right-radius: 5px;
+  padding: 10px;
 }
 .tab_content {
 	padding: 20px;
@@ -86,7 +74,7 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
 	text-decoration: none;
 }
 .tab_content a:hover {
-	color: #ff6600;
+	color: #000;
 	font-weight: bold;
 	text-decoration: underline;
 }
@@ -105,7 +93,10 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
 	text-align: center;
 }
 .bottom a{
-	color: #ff6600;
+	color: #000;
+}
+.bottom a:hover {
+  font-weight: bold;
 }
 .header {
 	text-align: center;
