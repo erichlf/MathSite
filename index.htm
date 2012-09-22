@@ -6,7 +6,8 @@
 <title>Erich L Foster's Home Page</title>
 <link rel="stylesheet" type="text/css" href="myweb.css">
 <script type="text/javascript"
-src="jquery.min.js"></script>
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -29,18 +30,17 @@ $(document).ready(function() {
 });
 
 </script>
-
-<!-- Let's have us some fancy LaTeX on our website!
-  Use:
-  <div class="math">
-    \begin{equation}
-      ...
-    \end{equation}
-  </div>
-  This is originaly from http://cdn.mathjax/latest/MathJax.js -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    equationNumbers: { autoNumber: "AMS"}
+  }
+});
+</script>
 <script type="text/javascript"
-src="MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript"
+src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
 </head>
 
 <body>
@@ -67,28 +67,148 @@ src="MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 								Fax: (540) 231-5960
         </div>
         <div id="Research" class="tab_content">
-            <h2>Research</h2>
-            <ul>
-              <li><h3>Interests:</h3>
-              <ul>
-                <li>Fluid Dynamics including:
-                <ul>
-                  <li>Climate Modeling
-                  <li>Flow in Porous Media
-                </ul>
-                <li>Finite Element Methods (FEM)</br>
-                <li>Computational Mathematics
-              </ul>
-              <li><h3>Projects:</h3>
-              <ul>
-                <li>Modeling and simulation of wind-driven large scale oceanic flows.
-                <!-- <video id="player" controls>
-                  <source src="Mov3D_DNS.mov" />
-                  <source src="Mov3D_DNS.ogg" />
-                  <embed src="http://blip.tv/play/gcMVgcmBAgA%2Em4v" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true"></embed>
-                  </video> -->
-              </ul>
-            </ul>
+          My current interests are in the application of mathematically justified
+          models and corresponding efficient algorithms to the areas of
+          <i>Large Eddy Simulation</i> (LES), in climate modeling and fluid
+          dynamics in general, and <i>flow in porous media</i> with an emphasis
+          on density dependent flow and contaminate transport. In both areas I
+          emphasize the use of <i>finite elements</i> (FE).
+          </br></br>
+          <b><i>Quasigeostrophic Equations</i>:</b></br>
+          The <i>Quasigeostrophic</i> equations (QGE) are simplified models of large
+          scale oceanic or atmospheric flows and are often used in climate modeling
+          \cite{Dijkstra05}. The QGE describe a double gyre system that are
+          characteristic of mid-latitude oceans \cite{Dijkstra05, Pedlosky, Vallis06}
+          (See \autoref{fig:OceanGyre}).  For the QGE, we consider the pure
+          streamfunction form
+          $$
+            -\frac{\partial\left[ \Delta \psi\right]}{\partial t} + Re^{-1} \Delta^2 \psi
+              + J(\psi, \Delta \psi) - Ro^{-1} \frac{\partial \psi}{\partial x} =
+              Ro^{-1} F, \qquad \Omega
+            \label{eqn:QGE}
+          $$
+          where \(\psi\), \(Re\), and \(Ro\) are the streamfunction, the Reynolds number,
+          and Rossby number, respectively, while
+          \[
+            J(\psi,\Delta \psi) =
+            \frac{\partial \psi}{\partial x}\,
+              \frac{\partial \left[\Delta \psi\right]}{\partial y}
+            - \frac{\partial \psi}{\partial y}\,
+              \frac{\partial \left[\Delta \psi\right]}{\partial x}
+          \]
+          is the Jacobian and \(F\) is the external forcing. To completely specify the
+          system we consider the boundary conditions \(\psi = \frac{\partial
+          \psi}{\partial \mathbf{n}} = 0\). In \cite{Foster} we applied a FE element
+          discretization to the QGE. This is the first time a \(C^1\) FE has been
+          used to discretize the QGE. In \cite{Foster} we presented rigorous
+          error analysis and numerical experiments.
+          </br></br>
+          Most FE discretizations of the QGE are for the
+          streamfunction-voriticity formulation of the QGE, and the reason is
+          simple. The pure streamfunction form is a fourth order PDE,
+          requiring \(C^1\) FEs for a conforming FE formulation, such as the
+          Argyris element.  However, the advantage of the pure streamfunction
+          formulation is the reduction of two variables to a single variable.
+          In addition to algorithm development, I have proven in \cite{Foster},
+          for the first time, optimal error estimates for the FE discretizations
+          of the QGE.</br>
+          <b>Theorem</b></br>
+            Take \(\dfrac{\partial \psi}{\partial t} = 0\), i.e. the stationary QGE. Let
+            \(\psi\) be the solution to the <i>weak form} of \eqref{eqn:QGE</i> and
+            \(\psi^h\) be the solution of the FE formulation of \eqref{eqn:QGE}.  Assume
+            that the small data condition is satisfied:
+            \begin{eqnarray}
+              Re^{-2} \, Ro
+              \geq \Gamma_1 \, \| F \|_{-2} .
+              \label{eqn:small_data_condition_dual}
+            \end{eqnarray}
+            Furthermore, assume that \(\psi\in H^6(\Omega) \cap H^2_0(\Omega)\).  Then
+            there exist positive constants \(C_0, \, C_1 \text{ and } C_2\) that can
+            depend on \(Re\), \(Ro\), \(\Gamma_1\), \(F\), but <i>not</i> on the
+            mesh size \(h\),
+            such that
+            \begin{align}
+              |\psi - \psi^h|_2 &\le C_2 \, h^4 , \label{eqn:H2Error} \\
+              |\psi - \psi^h|_1 &\le C_1 \, h^5 , \label{eqn:H1Error} \\
+              \|\psi - \psi^h\|_0 &\le C_0 \, h^6 . \label{eqn:L2Error}
+            \end{align}
+            <textarea id="bibtex_input" style="display:none;">
+@article{Argyris,
+title={The {TUBA} family of plate elements for the matrix displacement
+method},
+author={{A}rgyris, J.H. and Fried, I. and Scharpf, D.W.},
+journal={Aero. J.},
+volume={72},
+pages={701-709},
+year={1968},
+}
+
+@BOOK{Brenner,
+author = {S. C. Brenner and L. R. Scott},
+title = {The Mathematical Theory of Finite Element Methods},
+publisher = {Springer},
+year = {2000},
+edition = {Third},
+}
+
+@book{Dijkstra05,
+title = {Nonlinear Physical Oceanography: A Dynamical Systems Approach to the
+Large Scale Ocean Circulation and El Nino},
+author = {H. E. Dijkstra},
+volume = {28},
+year = {2005},
+publisher = {Springer Verlag},
+}
+
+@article{Foster,
+title={A Finite Element Discretization of the Streamfunction Formulation of
+the Stationary Quasi-Geostrophic
+Equations of the Ocean},
+author={Foster, E. L. and Iliescu, T. and Wang, Z.},
+journal={Submitted},
+year={2012},
+}
+
+@BOOK{Pedlosky,
+author = {J. Pedlosky},
+title = {Geophysical Fluid Dynamics},
+publisher = {Springer},
+year = {1992},
+edition = {second},
+}
+
+@book{Vallis06,
+author = {Geoffrey K. Vallis},
+title = {Atmosphere and Ocean Fluid Dynamics: Fundamentals and Large-Scale
+Circulation},
+publisher = {Cambridge University Press},
+year = {2006},
+}
+
+@ONLINE{Wiki,
+author = {Wikipedia},
+title = {Fonctions d'{A}rgyris {@ONLINE}},
+month = {mar},
+year = {2011},
+url = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
+}
+          </textarea>
+          <div class="bibtex_template">
+            <div class="if author" style="font-weight: bold;">
+              <span class="if year">
+                <span class="year"></span>,
+              </span>
+              <span class="author"></span>
+              <span class="if url" style="margin-left: 20px">
+                <a class="url" style="color:black;
+                  font-size:10px">(view online)</a>
+              </span>
+            </div>
+            <div style="margin-left: 10px; margin-bottom:5px;">
+              <span class="title"></span>
+            </div>
+          </div>
+          <div id="bibtex_display"></div>
 				</div>
         <div id="Teaching" class="tab_content">
             <h2>Teaching</h2>
