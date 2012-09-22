@@ -81,12 +81,12 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
           characteristic of mid-latitude oceans \cite{Dijkstra05, Pedlosky, Vallis06}
           (See \autoref{fig:OceanGyre}).  For the QGE, we consider the pure
           streamfunction form
-          $$
+          \begin{equation}
             -\frac{\partial\left[ \Delta \psi\right]}{\partial t} + Re^{-1} \Delta^2 \psi
               + J(\psi, \Delta \psi) - Ro^{-1} \frac{\partial \psi}{\partial x} =
               Ro^{-1} F, \qquad \Omega
             \label{eqn:QGE}
-          $$
+          \end{equation}
           where \(\psi\), \(Re\), and \(Ro\) are the streamfunction, the Reynolds number,
           and Rossby number, respectively, while
           \[
@@ -114,14 +114,14 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
           of the QGE.</br>
           <b>Theorem</b></br>
             Take \(\dfrac{\partial \psi}{\partial t} = 0\), i.e. the stationary QGE. Let
-            \(\psi\) be the solution to the <i>weak form} of \eqref{eqn:QGE</i> and
+            \(\psi\) be the solution to the <i>weak form</i> of \eqref{eqn:QGE} and
             \(\psi^h\) be the solution of the FE formulation of \eqref{eqn:QGE}.  Assume
             that the small data condition is satisfied:
-            \begin{eqnarray}
+            \begin{equation}
               Re^{-2} \, Ro
               \geq \Gamma_1 \, \| F \|_{-2} .
               \label{eqn:small_data_condition_dual}
-            \end{eqnarray}
+            \end{equation}
             Furthermore, assume that \(\psi\in H^6(\Omega) \cap H^2_0(\Omega)\).  Then
             there exist positive constants \(C_0, \, C_1 \text{ and } C_2\) that can
             depend on \(Re\), \(Ro\), \(\Gamma_1\), \(F\), but <i>not</i> on the
