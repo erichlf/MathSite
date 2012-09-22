@@ -1,0 +1,177 @@
+\documentclass{hwset}
+
+% info for header block in upper right hand corner
+\name{Erich L Foster}
+\class{Calculus I}
+\duedate{Due: 16 March 2011}
+\assignment{Homework 7}
+
+\begin{document}
+
+\begin{problem}[1.] 
+	Find the derivatives of the following functions at $x=3$ given\\ 
+	$f(3)=6,\, f'(3)=0,\, f(1)=1,\, f'(1)=5,\, g(3)=1,\, g'(3)=2,\, g(4)=2,\,
+	g'(4)=1,\, h(3)=4, \text{ and } h'(3)=2$ 
+	\be
+		\item $f(g(x))\cdot h(x)$
+		\item $\dfrac{f(x)}{g(h(x))}$
+	\ee
+\end{problem}
+
+\begin{enumerate}
+	\item \begin{solution}
+		\begin{align*}
+			\frac{d}{dx}\left[ f(g(x)) \cdot h(x) \right] &=
+				\frac{df(g(x))}{dg(x)}\frac{dg(x)}{dx}h(x) + f(g(x)) h'(x)\\
+			&= f'(g(x))\cdot g'(x)\cdot h(x) + f(g(x)) h'(x) \\
+			\Rightarrow \frac{d}{dx}\left[ f(g(x)) \cdot h(x) \right]_{x=3} &=
+				f'(g(3))\cdot g'(3) h(3) + f(g(3)) h'(3) \\
+			&= f'(1)\cdot 2\cdot 4 + f(1)\cdot 2 \\
+			&= 5 \cdot 8 + 1 \cdot 2 \\
+			&= \boxed{42}.
+		\end{align*}
+	\end{solution}
+	\item \begin{solution}
+		\begin{align*}
+			\frac{d}{dx}\left[ \frac{f(x)}{g(h(x))} \right] &= \dfrac{f'(x)\cdot g(h(x)) -
+				f(x) \frac{dg(h(x))}{dh(x)} \frac{dh(x)}{dx}}{g^2(h(x))}\\
+			&= \frac{f'(x)\cdot g(h(x)) - f(x)\cdot g'(h(x))\cdot h'(x)}{g^2(h(x))} \\
+			\Rightarrow \frac{d}{dx}\left[ \frac{f(x)}{g(h(x))} \right]_{x=3}	&=
+				\frac{f'(3)\cdot g(h(3)) - f(3)\cdot g'(h(3))\cdot h'(3)}{g^2(h(3))} \\
+			&= \frac{0\cdot g(4) - 6 \cdot g'(4)\cdot 2}{g^2(4)} \\
+			&= \frac{- 12\cdot 1}{2^2} \\
+			&= \boxed{-3}.
+		\end{align*}
+	\end{solution}
+\end{enumerate}
+
+\begin{problem}[2.]
+	\be
+		\item Find $y'$ if 
+		\begin{equation*}
+			y=\tan(\cos (\cos (x^2)))
+		\end{equation*}
+		\item Find $y^{(1123)}$ if 
+		\begin{equation*}
+			y=\sin^2 x
+		\end{equation*}
+	\ee
+\end{problem}
+
+\begin{enumerate}
+	\item \begin{solution}
+		\begin{align*}
+			y' &= \frac{d\tan(\cos(\cos(x^2)))}{d\cos(\cos(x^2))}
+			\frac{d\cos(\cos(x^2))}{d\cos(x^2)} \frac{d\cos(x^2)}{dx^2} \frac{dx^2}{dx}\\
+			&= \sec^2(\cos(\cos(x^2)))\cdot \left( -\sin(\cos(x^2)) \right)\cdot
+				\left( -\sin(x^2) \right)\cdot 2x \\
+			&= \boxed{2x\cdot \sec^2(\cos(\cos(x^2)))\cdot \sin(\cos(x^2))\cdot
+				\sin(x^2)}.
+		\end{align*}
+	\end{solution}
+	\item \begin{solution} For this problem we will need to determine a pattern.
+		\begin{align*}
+			y' &= \frac{d\sin^2 x}{d\sin x}\frac{d\sin x}{dx}\\
+			&= 2\sin x \cdot cos x \\
+			&= \sin 2x \\
+			\Rightarrow y'' &= \frac{d\sin 2x}{d[2x]}\frac{d[2x]}{dx} \\
+			&= 2\cos 2x \\
+			\Rightarrow y''' &= -2\frac{d\cos 2x}{d[2x]}\frac{d[2x]}{dx} \\
+			&= -4 \sin 2x \\
+			&= -(2)^2 \sin 2x \\
+			\Rightarrow y^{(4)} &= -(2)^2\frac{d\sin 2x}{d[2x]}\frac{d[2x]}{dx} \\
+			&= -(2)^3\cos 2x \\ 
+			\Rightarrow y^{(5)} &= -(2)^3\frac{d\cos 2x}{d[2x]}\frac{d[2x]}{dx} \\
+			&= (2)^4\sin 2x 
+		\end{align*}
+		From this we see that the derivative follows a pattern similar to $\sin 2x
+		\rightarrow \cos 2x \rightarrow -\sin 2x \rightarrow -\cos 2x$ and then it
+		repeats. We must however account for the number in front. As can be seen
+		from the pattern I have demonstrated the number in from should $2^{i-1}$
+		where $i$ is the order of the derivative. To use the pattern for the
+		trigonometric function we determine the remainder after dividing $1123$ by
+		$4$. In this case we see that the remainder is $3$. Therefore, we want the
+		trigfunction in the third position of the established pattern, i.e. $-\sin
+		2x$. Finally we see that
+		\begin{equation*}
+			\boxed{y^{(1123)} = -(2)^{1122} \sin 2x}
+		\end{equation*}
+	\end{solution}
+\end{enumerate}
+
+\begin{problem}[3.]
+	Using implicit differentiation show
+	\be
+		\item $\frac{d}{dx}\left[\sin^{-1} x\right] = \dfrac{1}{\sqrt{1 - x^2}}$
+		Hint: Set $y=\sin^{-1} x$ solve for $x$ and then differentiate.
+		\item $\frac{d}{dx} \left[\ln x\right] = \dfrac{1}{x}$ 
+		Hint: Set $y=\ln x$ solve for $x$ and then differentiate.
+	\ee
+\end{problem}
+
+\begin{enumerate}
+	\item \begin{solution}
+		Let $y=\sin^{-1} x$ then 
+		\begin{align*}
+			&\sin y = x \\
+			&\Rightarrow\frac{d}{dx}\left[\sin y \right] = \frac{d}{dx}\left[ x \right]\\
+			&\frac{d\sin y}{dy}\frac{dy}{dx} = 1 \\
+			&\cos y \cdot y' = 1 \\
+			&y' = \frac{1}{\cos y}  \\
+			&y' = \frac{1}{\cos (\sin^{-1} x)}  \\
+			&y' = \frac{1}{\sqrt{1 - \sin^2 (\sin^{-1} x)}}  \\
+			&\boxed{y' = \frac{1}{\sqrt{1 - x^2}}}.
+		\end{align*}
+	\end{solution}
+	\item \begin{solution} Let $y = \ln x$ then
+		\begin{align*}
+			&e^y = x\\
+			&\Rightarrow \frac{d}{dx}\left[ e^y \right] = \frac{d}{dx}\left[ x \right] \\
+			&\frac{de^y}{dy}\frac{dy}{dx} = 1 \\
+			&e^y\cdot y' = 1 \\
+			&y' = \frac{1}{e^y} \\
+			&y' = \frac{1}{e^{ln x}} \\
+			&\boxed{y' = \frac{1}{x}}.
+		\end{align*}
+	\end{solution}
+\end{enumerate}
+
+\begin{problem}[4.] 
+	Given the following functions find $y'$
+	\be
+		\item $\cos y + \tan y^2 = \dfrac{x+1}{e^{x^2}}$
+		\item $y^2 + y = \cot(3x +2)$
+	\ee
+\end{problem}
+
+\begin{enumerate}
+	\item \begin{solution}
+		\begin{align*}
+			&\frac{d}{dx}\left[ \cos y + \tan y^2 \right] = \frac{d}{dx}\left[
+				\frac{x+1}{e^{x^2}} \right] \\
+			&\frac{d\cos y}{dy}\frac{dy}{dx} + \frac{d\tan
+				y^2}{dy^2}\frac{dy}{dx} = \dfrac{e^{x^2} -
+				(x+1)\frac{de^{x^2}}{dx^2}\frac{dx^2}{dx}}{\left[ e^{x^2} \right]^2} \\
+			&-\sin y \cdot y' + \sec^2 y^2 \cdot 2y \cdot y' = \dfrac{e^{x^2} -
+				(x+1)e^{x^2}\cdot 2x}{\left[ e^{x^2} \right]^2} \\
+			&\left[ -\sin y  + 2y\cdot \sec^2 y^2 \right]\cdot y' = \dfrac{e^{x^2} -
+				(x+1)e^{x^2}\cdot 2x}{\left[ e^{x^2} \right]^2} \\
+			&y' = \dfrac{e^{x^2}\cdot \left[1 - (x+1)\cdot 2x \right]}{\left[ -\sin y  + 2y\cdot
+				\sec^2 y^2 \right]\cdot \left[ e^{x^2} \right]^2} \\
+			&\boxed{y' = \dfrac{1 - 2x^2 - 2x}{\left[ -\sin y  + 2y\cdot
+				\sec^2 y^2 \right]\cdot e^{x^2}}}.
+		\end{align*}
+	\end{solution}
+	\item \begin{solution}
+		\begin{align*}
+			&\frac{d}{dx}\left[ y^2 + y \right] = \frac{d}{dx}\left[ \cot (3x+2)
+				\right]\\
+			&\frac{dy^2}{dy}\frac{dy}{dx} + \frac{dy}{dx} = \frac{d\cot (3x+2)}{d[3x
+				+2]}\frac{d[3x+2]}{dx} \\
+			&2y\cdot y' + y' = -3\csc^2 (3x+2) \\
+			&\left[ 2y\cdot + 1 \right] \cdot y' = -3\csc^2 (3x+2) \\
+			&\boxed{y' = \frac{-3\csc^2 (3x+2)}{ 2y\cdot + 1}}.
+		\end{align*}
+	\end{solution}
+\end{enumerate}
+\end{document}

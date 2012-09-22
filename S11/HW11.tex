@@ -1,0 +1,68 @@
+\documentclass[unboxed]{hwset}
+
+\name{Erich L Foster}
+\class{Calculus I}
+\duedate{20 April 2011}
+\assignment{Homework 11}
+
+\begin{document}
+\begin{problem}[1.]
+	Prove the following  equations have exactly one real solution in the given
+	interval (do not find the root)
+	\begin{enumerate}
+		\item $\cos x = e^x$ in the interval $[-1,1]$.
+		\item $\ln x = \tan x$ in the interval $(3,4.5)$
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[2.]
+	Given $f(x) = \sin 2x $ in $[0, \sfrac{\pi}{2}]$
+	\begin{enumerate}
+		\item Verify $f$ meets the conditions of the Mean Value Theorem.
+		\item Find the value(s) of $c$ that satisfies the conclusion of the Mean
+			Value Theorem.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[3.]
+	For $f(x) = \left| x^3 + 1\right|$ defined on the entire real	number line
+	\begin{enumerate}
+		\item Find all Critical Points
+		\item Find all Inflection Points
+		\item Use the First Derivative to find any max/mins.
+		\item Use the Second Derivative to find any max/mins.
+	\end{enumerate}
+\end{problem}
+
+\begin{problem}[4.]
+	Graph $f(x) = \dfrac{4x}{x^2 + 1}$. Don't use a table of values and show all
+	work.
+\end{problem}
+
+\begin{problem}[5.]
+	Given $f$ is a continuous function and $f(0) = 0$ use the following table
+	to graph the function $f$
+	\begin{center}
+	\begin{tikzpicture}
+		\draw (-1,0) node[above,fill=none] {$x$} -- (0,0) node[above,fill=none]
+		{$-\infty$} -- (2,0) node[above,fill=none] {$1$} -- (4,0)
+		node[above, fill=none] {$4$} -- (6,0) node[above, fill=none]
+		{$6$} -- (8,0) node[above, fill=none] {$+\infty$};
+		\draw (-0.5,0.5) -- (-0.5,-0.75) node[left,fill=none] {$f'(x)$} --
+		(-0.5,-2) node[above left,fill=none] {$f''(x)$};
+		\draw[dashed] (2,0) -- (2,-2);
+		\draw[dashed] (4,0) -- (4,-2);
+		\draw[dashed] (6,0) -- (6,-2);
+		\node at (0.5,-0.75) {$+$};
+		\node at (3,-0.75) {$-$};
+		\node at (5,-0.75) {$-$};
+		\node at (7,-0.75) {$+$};
+		\node at (0.5,-1.75) {$-$};
+		\node at (3,-1.75) {$-$};
+		\node at (5,-1.75) {$+$};
+		\node at (7,-1.75) {$+$};
+	\end{tikzpicture}
+	\end{center}
+\end{problem}
+
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass{hwset}
+
+% info for header block in upper right hand corner
+\name{Erich L Foster}
+\class{Calculus I}
+\duedate{Due: 09 February 2011}
+\assignment{Homework 2 Makeup}
+
+\begin{document}
+
+\begin{problem}
+	Prove the limit statements
+	\begin{equation*}
+		\lim_{x\to \sqrt{3}} \frac{1}{x^2} = \frac{1}{3}.
+	\end{equation*}
+\end{problem}
+
+\begin{solution}
+	First, we see that $f(x) = \dfrac{1}{x^2},\, x_0=\sqrt{3},\, L=\dfrac{1}{3}$
+	Let $\epsilon >0$ be given then
+	\begin{align*}
+		\left|f(x) - L\right| &< \epsilon \\
+		\left|\dfrac{1}{x^2} - \dfrac{1}{3}\right| &< \epsilon \\
+		-\epsilon < \dfrac{1}{x^2} - \dfrac{1}{3} &< \epsilon \\
+		\dfrac{1}{3} - \epsilon < \dfrac{1}{x^2} &< \dfrac{1}{3} + \epsilon \\
+		\frac{1}{\frac{1}{3} - \epsilon} > x^2 &> \frac{1}{\frac{1}{3} + \epsilon} \\
+		\text{Assuming }& \epsilon < \frac{1}{3} \\
+		\sqrt{\frac{1}{\frac{1}{3} - \epsilon}} > x &> \sqrt{\frac{1}{\dfrac{1}{3} +
+			\epsilon}} \\
+		\sqrt{\frac{1}{\frac{1}{3} + \epsilon}} < x &< \sqrt{\frac{1}{\dfrac{1}{3} -
+			\epsilon}}
+	\end{align*}
+	And we want 
+	\begin{align*}
+		|x - x_0| &< \delta \\
+		|x - \sqrt{3}| &< \delta \\
+		-\delta < x - \sqrt{3} &< \delta \\
+		\sqrt{3} - \delta < x &< \sqrt{3} + \delta
+	\end{align*}
+	Therefore,
+	\begin{align*}
+		\sqrt{3} - \delta_1 &= \sqrt{\frac{1}{\frac{1}{3} + \epsilon}} \\
+		\delta_1 &= \sqrt{3}  - \sqrt{\frac{1}{\frac{1}{3} + \epsilon}} \\
+		\sqrt{3} + \delta_2 &= \sqrt{\frac{1}{\frac{1}{3} - \epsilon}} \\
+		\delta_2 &= \sqrt{\frac{1}{\frac{1}{3} - \epsilon}} - \sqrt{3} \\
+		\Rightarrow \delta = \min(\delta_1,\delta_2).
+	\end{align*}
+\end{solution}
+
+\end{document}

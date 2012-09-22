@@ -1,0 +1,200 @@
+\documentclass{hwset}
+
+% info for header block in upper right hand corner
+\name{Erich L Foster}
+\class{Calculus I}
+\duedate{Due: 02 March 2011}
+\assignment{Homework 6}
+
+\begin{document}
+
+\begin{problem}[1.] 
+	Find the derivative and second derivative of the following
+	\be
+		\item $g(x) = \frac{1+\sec(x)}{1-\sec(x)}$
+		\item $h(x) = \sin^2 x$
+	\ee
+\end{problem}
+
+\be
+	\item
+	\begin{solution}
+		\begin{align*}
+			g'(x) &= \dfrac{\frac{d}{dx}\left[1+\sec x \right](1-\sec x) -
+				\frac{d}{dx}\left[1 - \sec x\right](1 + \sec x}{(1 - \sec x)^2} \\
+			&= \dfrac{\sec x \tan x (1-\sec x) + \sec x \tan x(1 + \sec x)}{(1 - \sec
+				x)^2} \\
+			&= \boxed{\dfrac{2\sec x \tan x}{(1 - \sec x)^2}} \\
+			g''(x)&= \dfrac{\frac{d}{dx}\left[2\sec x \tan x\right](1 - \sec x)^2 -
+				\frac{d}{d(1- \sec x)}\left[(1 - \sec x)^2\right]
+				\frac{d}{dx}\left[1-\sec x\right](2\sec x \tan x)}{(1-\sec x)^4} \\
+			&= \dfrac{2\left(\frac{d}{dx}\left[\sec x\right]\tan x +
+				\frac{d}{dx}\left[\tan x\right] \sec x\right)(1 - \sec x)^2 -
+				2(1 - \sec x)(\sec x \tan x)(2\sec x \tan x)}{(1-\sec x)^4} \\
+			&= \boxed{\dfrac{2\left(\sec x\tan^2 x + \sec^3 x\right)(1 - \sec x)^2 -
+				2(1 - \sec x)(\sec x \tan x)(2\sec x \tan x)}{(1-\sec x)^4}}
+		\end{align*}
+	\end{solution}
+	\item
+	\begin{solution}
+		\begin{align*}
+			h'(x) &= \frac{d}{d(\sin x)}\left[(\sin x)^2\right] \frac{d}{dx}\left[\sin
+				x\right] \\
+			&= 2\sin x \cos x \\
+			&= \boxed{\sin 2 x} \\
+			h''(x) & = \frac{d}{d(2x)}\left[\sin 2x\right] \frac{d}{dx}(2x) \\
+			&= (\cos 2x) 2 \\
+			&= \boxed{2 \cos 2x}
+		\end{align*}
+	\end{solution}
+\ee
+
+\begin{problem}[2.]
+	Suppose that an object moves back and forth according to the function
+	\begin{equation*}
+		f(t)=t^{3}+bt^{2}+ct+d,\quad f(0)=1,\, f'(0)=0, \text{ and } f''(0)=3.
+	\end{equation*}
+	\be
+		\item Using the information above find $f(t)$.
+		\item When is the object at rest?
+		\item When is the object moving forward? Moving backward?
+		\item When is the object accelerating?
+		\item	How far did the object travel (counting retraces!) between $t=0$ and
+		$t=8$?
+	\ee
+\end{problem}
+
+\be
+	\item
+	\begin{solution}
+		\begin{align*}
+			&f(0) = d = 1 \\
+			&f'(t) = 3t^2 + 2bt + c \\
+			&f'(0) = c = 0 \\
+			&f''(t) = 6t+2b \\
+			&f''(0) = 2b = 3 \Rightarrow b = \frac{3}{2} \\
+			\Rightarrow & \boxed{f(t) = t^3 + \frac{3}{2} t^2 + 1} 
+		\end{align*}
+	\end{solution}
+	\item
+	\begin{solution}
+	The object is at rest when $f'(t)$ (velocity) is zero, i.e.
+	\begin{align*}
+		&f'(t) = 3t^2 + 3t = 0 \\
+		&3t(t + 1) = 0\\
+		&\boxed{t = 0, \quad t = -1}
+	\end{align*}
+	\end{solution}
+	\item
+	\begin{solution}
+		An object is moving forward when $f'(t)>0$ and backward when $f'(t)<0$, so
+		give the zeros we found in (b) we can draw the following number line \\
+\begin{tikzpicture}%[font=\Large]
+	\draw (0,0) -- (12.5,0);
+	\foreach \x in {0,3,6,9,12}
+		\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,0pt);
+%	\foreach \x in {0,1,2,3,4,5,6,7,8,9,10,11,12}
+%		\draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] 
+%			{$\frac{\x}{3}$};
+	\draw (0,0) node[above]{$(+)$};
+	\draw (3,0) node[above]{$-1$};
+	\draw (6,0) node[above]{$(-)$};
+	\draw (9,0) node[above]{$0$};
+	\draw (12,0) node[above]{$(+)$};
+	\draw (13,0) node[right]{$f'(t)$};
+\end{tikzpicture} \\
+		From the above number line we see that the particle is moving forward when
+		$\boxed{t\in(-\infty,-1)\bigcup(0,\infty)}$ and moving backward when
+		$\boxed{t\in(-1,0)}$.
+	\end{solution}
+	\item
+	\begin{solution}
+		The object is accelerating when $f''(t)>0$, i.e.
+		\begin{align*}
+			f''(t) &= 6t+3 > 0 \\
+			&6t > -3 \\
+			&\boxed{t > -\frac{1}{2}}
+		\end{align*}
+		Note: On a more complicated problem a number line could be used.
+	\end{solution}
+	\item
+	\begin{solution}
+		Since the object is only moving forward in the given interval we can use the
+		displacement formula
+		\begin{align*}
+			\Delta f &= f(8) - f(0) \\
+			&= 8^3 + \frac{3}{2} 8^2 + 1 - 0^3 - \frac{3}{2} 0^2 - 1 \\
+			&= 512 + \frac{3}{2}\cdot 64 \\
+			&= \boxed{608}
+		\end{align*}
+	\end{solution}
+\ee
+
+\begin{problem}[3.] 
+	Suppose $f(u)=\cos(u)$ and $g(t)=3t^{4}$. Using chain rule, compute:
+	\be
+		\item $(f\circ g)'(t)$
+		\item $(g\circ f)'(u)$
+		\item $(g\circ g)'(t)$
+		\item $(f\circ f)'(u)$
+	\ee
+\end{problem}
+
+\begin{enumerate}
+	\item \begin{solution}
+		\begin{align*}
+			(f \circ g)'(t) &= f'(g(t)) g'(t)	\\
+			&= \boxed{-\sin (3t^4) \cdot 12t^3}
+		\end{align*}
+	\end{solution}
+	\item \begin{solution}
+		\begin{align*}
+			(g \circ f)'(u) &= g'(f(u)) f'(u) \\
+			&= \boxed{-12 \cos^3 u \sin u}
+		\end{align*}
+	\end{solution}
+	\item \begin{solution}
+		\begin{align*}
+			(g\circ g)'(t) &= g'(g(t)) g'(t) \\
+			&= 12(3t^4)^3 12t^3 \\
+			&= \boxed{3888 t^{15}}
+		\end{align*}
+	\end{solution}
+	\item \begin{solution}
+		\begin{align*}
+			(f\circ f)'(u) &= f'(f(u)) f'(u) \\
+			&= \boxed{\sin (\cos u) \sin u}
+		\end{align*}
+	\end{solution}
+\end{enumerate}
+
+\begin{problem}[4.]
+	Given that $f$ and $g$ are both differential functions find the derivative of
+	the following
+	\be
+		\item $\left((f\cdot g)\circ f\right)(t)$
+		\item $\left(f \circ \left(\frac{f}{g}\right)\right)(x)$
+	\ee
+\end{problem}
+
+\begin{enumerate}
+	\item \begin{solution}
+		\begin{align*}
+			\frac{d}{dt}[((f\cdot g) \circ f)(t)] &= \frac{d}{dt}[f(f(t))\cdot g(f(t)) \\
+			&= \frac{d}{dt}[f(f(t))]g(f(t)) + \frac{d}{dt}[g(f(t))]f(f(t)) \\
+			&= \boxed{f'(f(t)) f'(t) g(f(t)) + g'(f(t)) f'(t) f(f(t))}
+		\end{align*}
+	\end{solution}
+	\item \begin{solution}
+		\begin{align*}
+			\frac{d}{dx}\left[\left(f\circ \left(\frac{f}{g}\right)\right)(x)\right] &=
+				\frac{d}{dx}\left[f\left(\frac{f(x)}{g(x)}\right)\right] \\
+			&= f'\left(\frac{f(x)}{g(x)}\right)
+				\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] \\
+			&= \boxed{f'\left(\frac{f(x)}{g(x)}\right)\left[\frac{f'(x)g(x) -
+				g'(x)f(x)}{[g(x)]^2}\right]}
+		\end{align*}
+	\end{solution}
+\end{enumerate}
+
+\end{document}

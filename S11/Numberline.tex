@@ -1,0 +1,51 @@
+\documentclass{hwset}
+
+\name{Erich L Foster}
+\class{Calculus I}
+\duedate{28 February 2011}
+\assignment{Numberline}
+
+\begin{document}
+Say you are given a problem where you need to determine when $f'(t)<0$ given
+$f'(t) = t^2+2t-3$ then the easiest way to do this problem is by a numberline.
+First find the zeros of $f'(t)$, i.e.
+\begin{align*}
+	&f'(t) = (t+3)(t-2) = 0 \\
+	&\Rightarrow t+3 = 0 \quad t - 2 = 0 \\
+	&\Rightarrow t = -3 \quad t = 2
+\end{align*}
+Now plot a number line like so \\
+\begin{tikzpicture}%[font=\Large]
+	\draw (0,0) -- (12.5,0);
+	\foreach \x in {0,3,6,9,12}
+		\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,0pt);
+%	\draw (0,0) node[above]{$(+)$};
+	\draw (3,0) node[above]{$-3$};
+%	\draw (6,0) node[above]{$(-)$};
+	\draw (9,0) node[above]{$2$};
+%	\draw (12,0) node[above]{$(+)$};
+	\draw (13,0) node[right]{$f'(t)$};
+\end{tikzpicture} \\
+Now, that you have a number line, determine the sign $f'(t)$ in each interval.
+To do this evaluate $f'(t)$ at some point in each interval, i.e
+\begin{align*}
+	f'(-2) &= (-4+3)(-4-2) = 6 \\
+	f'(0) &= (0 + 3)(0-2) = -6 \\ 
+	f'(3) &= (3 + 3)(3-2) = 6. 
+\end{align*}
+Now, plot the number line with the positive and negatives in it \\
+\begin{tikzpicture}%[font=\Large]
+	\draw (0,0) -- (12.5,0);
+	\foreach \x in {0,3,6,9,12}
+		\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,0pt);
+	\draw (0,0) node[above]{$(+)$};
+	\draw (3,0) node[above]{$-3$};
+	\draw (6,0) node[above]{$(-)$};
+	\draw (9,0) node[above]{$2$};
+	\draw (12,0) node[above]{$(+)$};
+	\draw (13,0) node[right]{$f'(t)$};
+\end{tikzpicture}
+From this we see that $f'(t)<0$ in the interval $t\in(-3,2)$ and $f'(t)>0$ in
+the intervals $t\in(-\infty,3)\bigcup (2,\infty)$.
+
+\end{document}

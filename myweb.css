@@ -1,0 +1,126 @@
+body {
+	background: #6e0f0d;
+	margin: 0;
+	padding: 0;
+	font: 10px normal Verdana, Arial, Helvetica, sans-serif;
+	color: #444;
+}
+h1 {font-size: 3em; margin: 20px 0;}
+.container {width: 565px; margin: 10px auto;}
+ul.tabs {
+	margin: 0;
+	padding: 0;
+	float: left;
+	list-style: none;
+	height: 22px;
+	width: 100%;
+}
+ul.tabs li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	height: 21px;
+	line-height: 21px;
+	border: 1px solid #999;
+	border-left: none;
+	margin-bottom: -1px;
+	background: #ff6600;
+	overflow: hidden;
+	position: relative;
+	-moz-border-radius: .75em .75em 0em 0em;
+	border-radius-topleft: .75em;
+	border-radius-topright: .75em;
+	border: 1px solid #999;
+}
+ul.tabs li a {
+	text-decoration: none;
+	color: #6e0f0d;
+	display: block;
+	font-size: 1.3em;
+	padding: 0 20px;
+	-moz-border-radius: .75em .75em 0em 0em;
+	border-radius-topleft: .75em;
+	border-radius-topright: .75em;
+	/*border: 1px solid #fff;*/
+	outline: none;
+}
+ul.tabs li a:hover {
+	-moz-border-radius: .75em .75em 0em 0em;
+	border-radius-topleft: .75em;
+	border-radius-topright: .75em;
+	background: #ff8800;
+}	
+html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover  {
+	background: #fff;
+	color: #000;
+	border-bottom: 1px solid #fff;
+}
+.tab_container {
+	border: 1px solid #999;
+	border-top: none;
+	clear: both;
+	float: left; 
+	width: 100%;
+	background: #fff;
+	-moz-border-radius-bottomright: 5px;
+	-khtml-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-khtml-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-khtml-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+.tab_content {
+	padding: 20px;
+	font-size: 1.3em;
+}
+.tab_content h2 {
+	font-weight: normal;
+	padding-bottom: 0px;
+	font-size: 1.6em;
+}
+.tab_content a, .tab_content a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+.tab_content a:hover {
+	color: #ff6600;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.tab_content img {
+	float: left;
+	margin: 0 20px 20px 0;
+	border: 1px solid #ddd;
+	height: 180;
+	width: 120;
+	padding: 5px;
+}
+.bottom {
+	clear: both;
+	display: block;
+	padding: 10px 0;
+	text-align: center;
+}
+.bottom a{
+	color: #ff6600;
+}
+.header {
+	text-align: center;
+}
+.header h4{
+	padding: -1em;
+}
+.cvlinks {
+	text-align: center;
+	font-size: 0.8em;
+}
+.cvlinks a:before, .cvlinks a:after {
+	content: "|";
+}
+table td {
+	padding-right: 10px;
+	vertical-align: top;
+}

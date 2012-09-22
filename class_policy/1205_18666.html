@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html> 
+<head> 
+  <title>1205 Contract</title> 
+	<link rel="stylesheet" type="text/css" href="http://www.math.vt.edu/people/erichlf/myweb.css">
+<script type="text/javascript"
+src="http://www.math.vt.edu/people/erichlf/jquery.min.js"></script> 
+<script type="text/javascript"> 
+ 
+$(document).ready(function() {
+ 
+	//Default Action
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+	
+	//On Click Event
+	$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active content
+		return false;
+	});
+ 
+});
+</script>
+</head> 
+
+
+<body>
+<div class="container"> 
+	<ul class="tabs"> 
+		<li><a href="#Course_Overview">Course Overview</a></li> 
+		<li><a href="#Course_Policies">Course Policies</a></li> 
+		<li><a href="#Important_Notices">Important Notice</a></li> 
+		<li><a href="#Important_Dates">Important Dates</a></li> 
+	</ul> 
+
+	<div class="tab_container"> 
+		<div id="Course_Overview" class="tab_content"> 
+		<h2 align="center">Course Information:</h2>
+		<table align="center">
+			<tr>
+				<td><b>Course:</b> Math 1205</td>
+				<td><b>Instructor:</b> Erich L Foster</td>
+			</tr>
+			<tr>
+				<td><b>Classroom:</b> RAND 116</td> 
+				<td><b>Office:</b> McBryde 461J</td>
+			</tr>
+			<tr>
+				<td><b>Meeting Time:</b> MWF 12:20-1:10PM</td> 
+				<td><b>Office Hours:</b> TTh 11-12:30PM</td>
+			<tr>
+				<td><b>Section:</b> 18666</td>
+			</tr>
+		</table>
+			<h3>Text</h3> 
+			<em>University Calculus</em>, 1st Edition, Haas-Weir-Thomas
+
+			<h3>Prerequisites</h3> 
+			You must have one of the following: 
+			<ul>
+				<li>  a grade of B or better in Math 1015/1016</li>
+				<li>  two units of high school algebra, one unit of geometry,</li>
+					1/2 unit each of trigonometry and precalculus AND placement by
+					the Mathematics Department
+				<li>  a passing grade in the Calculus Readiness Exam.</li>
+			</ul> 
+				
+			<h3>Course Content</h3> 
+			We will cover the material listed on the course
+			<u><a href="http://www.emporium.vt.edu/math1205/resources/syllabus.html">syllabus</a></u>.
+			Any changes will be announced in class. Each student is responsible for
+			taking weekly online
+			<u><a
+			href="http://www.emporium.vt.edu/math1205/resources/quizzes">quizzes</a></u>
+			and completing assigned
+			<u><a href="http://www.math.vt.edu/people/erichlf/HWS11.html">homework</a></u>.
+
+			<h3>Course Format</h3> 
+			Lecture classes will meet on Mondays, Wednesdays and Fridays for 50
+			minutes.  Class attendance will be taken and recorded. Written homework
+			assignments will be collected at the beginning of class. See the
+			Homework section below for more details. There will be 11 online
+			quizzes. Each quiz contains 6 questions with the exception of Quiz 1
+			which contains 12 questions.  Quiz 1 is a Trigonometry and Pre-Calculus
+			review quiz and does not cover any material to be covered in class.
+			Students are expected to have learned the material on Quiz 1 prior to
+			taking Math 1205.
+		</div>
+			
+		<div id="Course_Policies" class="tab_content"> 
+			<h3>Attendance</h3> 
+			Class attendance will be taken daily and kept for Mathematics Department
+			records. Students are responsible for course materials and announcements
+			covered in class.
+
+			<h3>Tests</h3> 
+			There will be 3 common-time exams and a common-time final exam. The <u><a
+			href="http://www.emporium.vt.edu/math1205/resources/testinfo">locations
+			for the exams</a></u> will be announced on the Math 1205 web page.
+			Typically, they will not be the same as our lecture class.<br/>
+			<br/> 
+			You must take tests on the specified date. If you have a Virginia Tech
+			class that meets at the time scheduled for an exam, an alternative
+			starting time for the exam later in the evening will be provided.  No
+			makeup tests will be given.  Do NOT take this lightly. If it is to your
+			benefit, your grade on the final exam will replace your lowest test
+			grade. <br/> 
+			<br/> 
+			The final exam is a required class meeting that will not be rescheduled
+			for discretionary reasons, including conflicts with work schedules and
+			with classes and exams at other colleges. 
+			
+			<h3>Homework</h3>
+			Homework assignments will be due at the beginning of class unless
+			otherwise specified and are considered late after collection in class. No
+			late work will be accepted, without valid excuse, i.e. illness or
+			emergency. You are encouraged to work with other students in our class on
+			the homework, but the work that you hand in must be your own. The Honor
+			Code is in effect for all assignments. Written homework assignments are
+			posted on the course web page by section. Tentative homework due dates are
+			posted <u><a
+			href="http://www.math.vt.edu/people/erichlf/HWS11.html">here</a></u>.
+			At least one homework grade will be dropped. 
+			
+			<h3>Office Hours</h3> 
+			Office hours begin 20 January and end 05 May. Exam office hours will
+			be given later. No office hours will be held during breaks.  If you can't
+			make the scheduled office hours, then please check my <u><a
+			href="http://www.math.vt.edu/people/erichlf/">website's calendar</a></u> to see
+			other open times and then email me with a suggested time for an
+			appointment. 
+			
+			<h3>Grading</h3> 
+			<ul>
+				<li>  Online Quizzes:	15&#37;</li>
+				<li>  Homework:	20&#37;</li>
+				<li>  Exams:	45&#37;(15&#37; each)</li>
+				<li>  Final Exam:	20&#37;</li>
+			</ul>
+			A 90&#37; will guarantee an A-, 80&#37; a B-, 70&#37; a C-, 60&#37; a D-.
+			Plus and minus grades will be assigned at my discretion.
+			
+			<h3>Honor System</h3> 
+			You must abide by the Virginia Tech Honor Code for all graded work.  <u><a
+			href="http://www.emporium.vt.edu/math1205/resources/honorpolicy.html">See
+			this webpage</a></u> for further information about your responsibilities.
+			
+			<h3>Classroom Courtesy</h3> 
+			You and your classmates are entitled to learn in an atmosphere of mutual
+			respect, and freedom from distractions and disturbances. 
+		</div>
+			
+		<div id="Important_Notices" class="tab_content"> 
+			<h3>Important</h3> 
+			If you are not on the official class roll, you are not in the class.  It
+			is your responsibility that you are properly enrolled in the class section
+			you attend.  It is easy to verify.  For no foreseeable reason (computer
+			and/or registrar personnel mistakes included) will you be allowed to stay
+			in the wrong section.  Your work will not be graded.  Simply attending a
+			section will NOT entitle you to be placed on its roll.<br/> 
+			<br/> 
+			If you need adaptations or accommodations because of a disability, please
+			make an appointment with me as soon as possible.
+		</div>
+			
+		<div id="Important_Dates" class="tab_content"> 
+			<h3>Important Dates</h3> 
+				<b>Last Day to Add Classes:</b> Monday, 28 January<br/>
+				<b>Last Day to Drop Classes Without Grade Penalty:</b> Monday, 28 February <br/>
+				<b>Spring Break:</b> Monday, 07 March - Friday, March 11<br/>
+				<b>Last Day to Resign Without Grade Penalty:</b> Monday, 21 March<br/>
+				<b>Deadline for undergraduates to request rescheduling of final
+				examinations that conflict or constitute a third exam in 24 hours (See
+				you Academic Dean):</b> Friday, 15 April <br/>
+				<b>Thanksgiving Break:</b> Saturday, 20 November - Sunday, 28 November <br/>
+				<b>Last Day to apply for Course Withdrawal:</b> Friday, 29 April <br/>
+				<b>Classes end:</b> Wednesday, 04 May <br/>
+				<b>Tentative Test Dates (7:00 p.m.) and Tentative Days Off:</b> 
+					<p> Test 1 - 16 February (Day Off: Friday, 04 March) </p>
+					<p> Test 2 - 30 March (Day Off: Friday, 01 April) </p>
+					<p> Test 3 - 27 April (Day Off: Friday, 29 April) </p>
+				<b>Tentative Online Quiz deadlines:</b> 11:59PM on below dates.
+				Confirm and double check deadlines on Math 1205 syllabus and Math 1205
+				homepage.  
+					<p> Quiz 1 - Friday, 28 January</p>
+					<p> Quiz 2 - Wednesday, 02 February</p>
+					<p> Quiz 3 - Tuesday, 09 February</p>
+					<p> Quiz 4 - Wednesday, 23 February</p>
+					<p> Quiz 5 - Wednesday, 02 March</p>
+					<p> Quiz 6 - Wednesday, 16 March</p>
+					<p> Quiz 7 - Wednesday, 23 March</p>
+					<p> Quiz 8 - Tuesday, 29 March</p>
+					<p> Quiz 9 - Wednesday, 13 April</p>
+					<p> Quiz 10 - Wednesday, 20 April</p>
+					<p> Quiz 11 - Tuesday, 26 April<br/> </p>
+				<b>FINAL EXAM: Friday, 06 May; 7 PM - 9 PM</b> 
+		</div>
+	</div>
+</div>
+<div class="bottom">
+<h3><a href="http://www.math.vt.edu/people/erichlf/class_policy/1205_18666.pdf">PDF
+Version</a></h3>
+<a href="http://www.math.vt.edu/people/erichlf/">Erich's Page</a><br/>
+<a href="http://www.math.vt.edu">Virginia Tech Department of Mathematics</a>
+</div> 
+</body>

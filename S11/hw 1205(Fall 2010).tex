@@ -1,0 +1,659 @@
+\documentclass[12pt]{article}
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{8.5in}
+\setlength{\evensidemargin}{0in} \setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in} \setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1in}
+\usepackage{epsf}
+\usepackage[centertags]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{newlfont}
+\renewcommand{\d}{\text{\tt d}}
+
+\def\N{\mathds{N}}
+\def\Z{\mathds{Z}}
+\def\Q{\mathds{Q}}
+\def\R{\mathds{R}}
+\def\CC{\mathds{C}}
+\def\S{\mathbb{ S}}
+\def\Rnn{\mathds{R}^{n\times n}}
+\def\Cnn{\mathds{C}^{n\times n}}
+\def\Rnm{\mathds{R}^{n\times m}}
+\def\Cnm{\mathds{C}^{n\times m}}
+\def\Rmn{\mathds{R}^{m\times n}}
+\def\Cmn{\mathds{C}^{m\times n}}
+\def\Rn{\mathds{R}^n}
+\def\Cn{\mathds{C}^n}
+\def\Real{\mathbf{Re}\:}
+\def\Imag{\mathbf{Im}\:}
+\def\L{\mathscr{L}}
+\def\T{\mathscr{T}}
+\def\H{\mathscr{H}}
+\def\D{\mathscr{D}}
+\def\LL{\mathrm{L}}
+\def\Cont{\mathcal{C}}
+\def\Le{\mathds{L}_1 ^e (\mathds{R})}
+
+\def\dif{\:\mathrm{d}}
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\z{\mathbf{z}}
+\def\u{\mathbf{u}}
+\def\v{\mathbf{v}}
+\def\a{\mathbf{a}}
+\def\b{\mathbf{b}}
+\def\c{\mathbf{c}}
+\def\d{\mathbf{d}}
+\def\e{\mathbf{e}}
+\def\f{\mathbf{f}}
+\def\g{\mathbf{g}}
+
+\def\X{\mathbf{X}}
+\def\Y{\mathbf{Y}}
+
+\def\A{\mathbf{A}}
+\def\B{\mathbf{B}}
+\def\C{\mathbf{C}}
+%\def\D{\mathbf{D}}
+%\def\H{\mathcal{H}}
+\def\I{\mathscr{ I}}
+\def\W{\mathbf{W}}
+\def\F{\mathbf{F}}
+\def\Q{\mathbf{Q}}
+\def\P{\mathbf{P}}
+\def\M{\mathcal{M}}
+\def\X{\mathcal{X}}
+\def\f{\mathbf{f}}
+\def\SS{\mathscr{ S}}
+
+\def\AA{\mathcal{A}}
+
+
+\def\DD{\mathcal{D}}
+
+\def\U{\mathcal{U}}
+\def\W{\mathcal{W}}
+\def\0{\emptyset}
+
+\def\Adj{\mathrm{adj}}
+\def\Ker{\mathrm{Ker}\:}
+\def\Ran{\mathrm{Ran}\:}
+
+
+\newcommand{\brac}[1]{\left[#1 \right]}
+\newcommand{\paren}[1]{\left(#1 \right)}
+\newcommand{\der}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\derin}[2]{\mathrm{d}#1/\mathrm{d}#2}
+\newcommand{\Span}[1]{\mathrm{span}\left(#1 \right)}
+\newcommand{\Trace}[1]{\mathrm{Tr}\left(#1 \right)}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\tx}{\textrm}
+\newcommand{\Frac}{\displaystyle \frac}
+\newcommand{\Sqrt}{\displaystyle \sqrt}
+\begin{document}
+\begin{center}
+\textbf{Homework 1. Due on Monday, August 30} \\
+\end{center}\
+\\
+\\
+\textbf{1.}\ Suppose $f$ is defined on $[-1,3]$ and satisfies:
+$$ f(x)=\left\{
+              \begin{array}{ll}
+              \ \ x, &  \hbox{$-1\leq x<0$}\\
+              \\
+              -\frac{1}{2}x^{2}, & \  \  \hbox{$0\leq x<1$}\\
+              \\
+              \sqrt{1-(x-2)^{2}}, & \  \hbox{$1\leq x\leq3$, $x\neq2$}\\
+              \\
+              \ \ \ 0, & \  \  \hbox{$x=2$}
+              \end{array}
+            \right. $$
+a) Sketch the graph of the function given above.\\
+b) Does $\ds\lim_{x\to 2}f(x)$ exist? Justify your answer.\\
+c) Does $\ds\lim_{x\to 1}f(x)$ exist? Justify your answer.\\
+d) Does $\ds\lim_{x\to 4}f(x)$ exist? Justify your answer.\\
+\\
+\\
+\textbf{2.}\\
+a)\ Suppose that a function $f(x)$ is defined for all $x\in[-2,2]$.
+Can anything be said about the existence of $\ds\lim_{x\to 0}f(x)$?
+Give reasons for your answer.\\
+b)\ Suppose that $g$ is a function defined for all $x$. If $g(1)=5$,
+must $\ds\lim_{x\to1}g(x)$ exist? If it does, then must $
+\ds\lim_{x\to1}g(x)=5$? Can we conclude anything about
+$\ds\lim_{x\to1}g(x)$? Explain!
+\\
+\\
+\\
+\textbf{3.}\ Find the following limits.\\
+\\
+a)\ $\ds\lim_{h\to 0}\Frac{\sqrt{5h+4}-2}{h}$\\
+\\
+\\
+b)\ $\ds\lim_{x\to -2}\Frac{x+2}{\sqrt{x^2+5}-3}$\\
+\\
+\\
+c)\ $\ds\lim_{t\to 0}\Frac{1+t+\sin(t)}{3\cos(t)}$\\
+\\
+\\
+d)\ $\ds\lim_{u\to 1}\Frac{u^{6}-1}{u^{4}-1}$\\
+\newpage\
+\\
+\textbf{4.}\ Use Sandwich Theorem and limit laws to show that\\
+\\
+a)\ $\ds\lim_{t\to 0}t^{2}\cos(20\pi t)=0$\\
+\\
+\\
+b)\ $\ds\lim_{x\to 0}\Sqrt{x^{3}+x^{2}}\sin({\frac{\pi}{x}})=0$\\
+\\
+\\
+c)\ $\ds\lim_{h\to 0}\Big(h^{2}\cos(\frac{2}{h})+1\Big)\Big(h^{2}\cos(\frac{2}{h})-1\Big)=-1$\\
+\\
+\\
+d)\ $\ds\lim_{u\to 0}u^{2}4^{\sin(\frac{\pi}{u})}=0$\\
+\\
+\\
+\\
+\textbf{5.}\
+\\
+\\
+a) Evaluate $\ds\lim_{x\to 2}\Frac{\sqrt{6-x}-2}{\sqrt{3-x}-1}$\ .
+\\
+\\
+\\
+b) Is there any number $a$ such that
+$$\ds\lim_{x\to-2}\Frac{3x^{2}+ax+a+3}{x^2+x-2}$$
+exists? If so, find the value $a$ and the value of the limit.
+\\
+\\
+\\
+\textbf{1.}\ \ \  5 points each.\\
+\textbf{2.}\ 10 points each.\\
+\textbf{3.}\ \ \ 5 points each.\\
+\textbf{4.}\ \ \ 5 points each.\\
+\textbf{5.}\ 10 points each.\\
+\\\\\\\\\\\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 2. Due on Monday, September 6} \\
+\end{center}\
+\\
+\\
+\textbf{1.}\ Section 2.3 : $24,42$.\\
+\textbf{2.}\ Section 2.4 : $4,8,17,18$.\\
+\textbf{3.}\ Compute the following limits:\\
+\\
+a)\
+$\ds\lim_{t\to0}\Big(\ \Frac{2t}{\tan(t)}-\Frac{\sin(\sin(t))}{\sin(t)}\ \Big)$\\
+\\
+b)\
+$\ds\lim_{y\to0}\Big(\ \Frac{\sin(5y)}{\sin(4y)}+\Frac{\sin(3y)\cot(5y)}{y\cot(4y)}\ \Big)$\\
+\\
+\\
+\textbf{4.}\ section 2.4 : $43,44,46,50,54,64$.\\
+\textbf{5.}\ Section 2.4 : $74$.\\
+\\
+\\
+\\
+\textbf{1.}\ 10 points each.\\
+\textbf{2.}\  5 points each.\\
+\textbf{3.}\ 10 points each.\\
+\textbf{4.}\  5 points each.\\
+\textbf{5.}\ 10 points.\\
+\\\\\\\\\\\\\\\\\\\\\\\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 3. Due on Monday, September 13} \\
+\end{center}\
+\\
+\textbf{1.}\ Suppose $f(x)$ is given by
+$$f(x)=\left\{ \begin{array}{ll}
+              \ \sin(ax)\   \    \ ,& \  \  \  \hbox{$ x< 1$}
+              \\
+              \ \cos(x-1)  \   \   \ , & \   \   \   \hbox{$x\geq1$}
+                \end{array}
+            \right. $$\\
+Is there a value of $a$ for which the function $f$ is continuous? If
+so, find all such $a$.\\
+\\
+\\
+\textbf{2.}\ For what value(s) of $b$ is the function $g$ continuous
+on $(-\infty,\infty)$?
+$$g(x)=\left\{ \begin{array}{ll}
+              \  -4x+1  \  \  , & \  \  \hbox{$x\leq b$}
+              \\
+               \ x^2-2x+2 \  \ , & \  \  \hbox{$x>b$}
+            \end{array}
+            \right. $$
+\\
+\\
+\textbf{3.}  Let $F$ be the function defined by 
+$$F(x)=\left\{ \begin{array}{ll}
+              \  |3x-1|+\e^{-1/x}  \  \  , & \  \  \hbox{$x> 0$}
+              \\
+               \  (x-a)^2\  \ , & \  \  \hbox{$x<0$}
+            \end{array}
+            \right. $$
+For what value(s) of $a$, can we extend $g$ extend $g$ continuously on the whole real line?\\
+\textbf{Hint:} Use the left hand limit and the right hand limit as $x$ approaches 0.
+\\
+\\
+\textbf{4.}\ Use the Intermediate Value Theorem to show that there
+exist a root of the given equation in the specified interval.\\
+\textbf{a.}\ $\cos(x)=x$, $(0,1)$ \.
+\\
+\textbf{b.}\ $\sqrt[3]{x}=1-x$, $(1,2)$.\
+\\
+\\
+\textbf{5.}\ Is there a real number that is exactly $1$ more that
+its cube?Why?
+\\
+\\
+\textbf{6.}\ Textbook. Page $102$: $\sharp34,\sharp36$.
+\\
+\\
+\textbf{1.}\ 20 points.\\
+\textbf{2.}\ 10 points.\\
+\textbf{3.}\ 20 points.\\
+\textbf{4.}\ 10 points(each).\\
+\textbf{5.}\ 10 points.\\
+\textbf{6.}\ 10 points(each).\\
+\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 4. Due on Monday, September 27}
+\end{center}\
+\\
+\\
+\textbf{1.}\ Suppose $g(x)=\cos(x)$. Using the limit definition of
+the derivative, find $g'(a)$\ .\\
+\textbf{Hint:}\ $g'(a)=\ds\lim_{h\to
+0}\Frac{\cos(a+h)-\cos(a)}{h}$\ .\\
+Recall that $\cos(p+q)=\cos(p)\cos(q)-\sin(p)\sin(q)$\ .\\
+\\
+\\
+\\
+\textbf{2.}Suppose $f(x)$ is given by
+$$f(x)=\left\{ \begin{array}{ll}
+              \ x^{3}+x-1\   \    \ ,& \   \   \  \  \hbox{$ x< 0$}
+              \\
+              \ x^{2}-1  \   \   \ , & \   \   \   \hbox{$0\leq x\leq1$}
+              \\
+\ x^{3}-3x^{2}+3x  \ , & \   \   \   \  \hbox{$1<x$}
+                \end{array}
+            \right. $$
+\textbf{2.1)} Does $f'(0)$ exist? If so, what is it? If not, why not? Explain!\\
+\\
+\textbf{2.2)} Does $f'(1)$ exist? If so, what is it? If not, why not? Explain!\\
+\\
+\textbf{2.3)} How is defined the function $f'(a)$? i.e. give the
+description of $f'(a)$:
+
+$$f'(a)=\left\{ \begin{array}{ll}
+              \  \  \  \  , & \  \  \hbox{$a<0$}
+              \\
+               \  \  \  \ , & \  \  \hbox{$a=0$}
+              \\
+               \  \  \  \ , & \  \  \hbox{$0<a<1$}
+              \\
+                \  \  \  \ , & \  \  \hbox{$a=1$}
+              \\
+                \  \  \  \ , &  \  \  \hbox{$1<a$}
+                \end{array}
+            \right. $$
+\textbf{2.4)} What is the domain of $f'(a)$? Explain!
+\\\\\\\\
+\textbf{3.} Compute $\ds\lim_{t\to
+2}\big(\Frac{t^{10}-1024}{t^{6}-64}\big)$. \ \textbf{Hint:} It is
+not difficult to see that
+$$\Frac{t^{10}-1024}{t^{6}-64}=\Frac{\frac{t^{10}-2^{10}}{t-2}}{\frac{t^{6}-2^{6}}{t-2}}$$
+whenever $t\neq 2$. Then apply the power rule for derivatives.
+\\\\\\\\
+\textbf{4.}\\
+\textbf{4.1}\ Suppose that $\ds\lim_{x\to 2}
+\big(\Frac{5f(x)-10}{x^{3}-8}\big)=5$ and $f(2)=2$. Find $f'(2)$.\\
+\\
+\\
+\textbf{4.2}\ Compute $\ds\lim_{x\to
+0}\Frac{4^{x}-1}{5x^{2}+3x-5\sin(x)}$ \ .
+\\\\\\
+\textbf{5.}\\
+Suppose that $f(x)=x^{3}+bx^{2}+cx+d$, $f(0)=1$, $f'(0)=0$ and
+$f''(0)=3$.
+\\
+a) Using the information above find $f(x)$.\\
+b) Where is the tangent line horizontal?\\
+c) At what values of $x$ is $f''(x)=0$?\\
+d) At what values of $x$ is $f'''(x)=0$?\\
+\\
+\\
+\textbf{6.}\\
+In this question you can apply all of the rules given in class,
+except chain rule.
+Compute $f'(x)$ for each of the following cases:\\
+\\
+a) $f(x)=32^{x}\cos(x)+2^{5x}\sin(x)$.\\
+\\
+b)$f(x)=e^{x}\cos(x)+e^{x}\sin(x).$\\
+\\
+c) $f(x)=\cos^{2}(x^{3}-2x+1)+(5^{x}+x^{2}-2x)5^{x}+\sin^{2}(x^{3}-2x+1)$.\\
+\\
+d) $f(x)=(x^{2}-2x+3)e^{x}+\sin(2x)$.\\
+\textbf{Hint:} First of all, deduce that $\sin(2x)=2\sin(x)\cos(x)$.\\
+\\
+\\
+\textbf{1.}\ \ 5 points.\\
+\textbf{2.}\ \ 5 points each.\\
+\textbf{3.}\ 15 points.\\
+\textbf{4.}\ 10 points each.\\
+\textbf{5.}\ \ 5 points.\\
+\textbf{6.}\ \ 5 points each.\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 5. Due on Monday, October 4}
+\end{center}\
+\\\\\\
+\textbf{1.}\ Without using chain rule, compute $f'(x)$ for the following cases:\\
+\\
+a)\ $f(x)= 9^{-4x+5}$\\
+\\
+b)\ $f(x)= \Frac{x}{\cos(x)}$\\
+\\
+c)\ $f(x)=\Frac{2x+1}{x^{2}-1}$\\
+\\
+d)\ $f(x)=\Frac{1-x}{1+x^{2}}$\\\\\\\\
+\textbf{2.} Without using chain rule, compute $\Frac{dy}{dx}$\  for the following cases:\\
+\\
+a)\ $y= \Frac{1+\csc(x)}{1-\csc(x)}$\\
+\\
+b)\ $y= (\cos(x))^{3}$\\
+\\
+c)\ $y= \Frac{\sin^{3}(x)}{1-\cos^{2}(x)}$\\
+\\
+d)\ $y= \Frac{1-\cot^{2}(x)}{1+\cot^{2}(x)}$\ .\\
+\\
+\textbf{Hint.} Before computing the derivative, simplify by using
+trigonometric identities.\\\\\\\\
+\textbf{3.}\ Suppose that $f(x)=x^{3}+bx^{2}+cx+d$, $f(0)=1$,
+$f'(0)=0$ and $f''(0)=3$.
+\\
+a) Using the information above find $f(x)$.\\
+b) Where is the tangent line horizontal?\\
+c) At what values of $x$ is $f''(x)=0$?\\
+d) At what values of $x$ is $f'''(x)=0$?\\
+\\\\\\\\
+\textbf{4.} Suppose that an object moves back and forth according to
+the function
+$$s(t)=\Frac{3}{4}t^{3}-\Frac{9}{2}t^{2}+\Frac{27}{4}t+5$$\\
+How far did the object travel (counting retraces!) between $t=0$ and
+$t=8$? Also, find the object's acceleration each time the velocity
+is zero.
+Explain!\\
+\\
+\\
+\\
+\textbf{5.} You are standing atop a building $196$ feet above ground
+and throw a ball straight up in the air. Newton's law of motion tell
+us that the formula of the height (in feet) of the ball is $H(t) =
+-16t^{2} + 176t + 196$ ; where t is the time in seconds since the
+ball was released. How high does the ball get at its highest point?
+Explain your answer!\\
+\\
+\\
+\\
+\textbf{1.}\ 20 points.\\
+\textbf{2.}\ 20 points.\\
+\textbf{3.}\ 20 points.\\
+\textbf{4.}\ 20 points.\\
+\textbf{5.}\ 20 points.\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 6. Due on Monday, October 11}\\
+\end{center}\
+\textbf{1.} 10 points each.\\
+1.1 page 173, $\sharp38$\\
+1.2 page 173, $\sharp40$\\
+\\
+\textbf{2.} 10 points each.\\
+2.1 page 174, $\sharp64$\\
+2.2 page 174, $\sharp66$\\
+\\
+\textbf{3.} Page 174, $\sharp 74$ : (d), (e), (f) and (g).\ \ \ (5 points each)\\
+\\
+\textbf{4.}\ (5 points each).\ \ \ Suppose $f(x)$ and $g(t)$ are
+given by
+$$f(x)=\left\{ \begin{array}{ll}
+              \ 3x \   \    \ ,& \   \   \  \hbox{$ x\geq 0$}
+              \\
+              \ x^{2}  \   \   \ , & \   \   \   \hbox{$x<0$}
+                \end{array}
+            \right. $$
+
+$$g(t)=\left\{ \begin{array}{ll}
+              \ 5t \   \    \ ,& \   \   \   \hbox{$ t<0$}
+              \\
+              \ t^{2}  \   \   \ , & \   \   \   \hbox{$t\geq0$}
+                \end{array}
+            \right. $$\\
+4.1 Show that $f'(0)$ does not exist.\\
+4.2 Show that $g'(0)$ does not exist.\\
+4.3 Show that $(g\circ f)(x)$ is given by
+$$(g\circ f)(x)=\left\{ \begin{array}{ll}
+              \ 9x^{2} \   \    \ ,& \   \   \  \hbox{$ x\geq 0$}
+              \\
+              \ x^{4}  \   \   \ , & \   \   \   \hbox{$x<0$}
+                \end{array}
+            \right. $$
+4.4 Show that $(g\circ f)'(0)$ exists by computing its value. Note that in this problem you cannot use chain rule because $f'(0)$ and $g'(0)$ do not exist.\\
+\\
+\\
+\textbf{5.}\ (5 points each).\\
+Suppose $f(u)=\cos(u)$ and $g(t)=3t^{4}$. Using chain rule, compute:\\
+a) $(f\circ g)'(t)$\\
+b) $(g\circ f)'(u)$\\
+c) $(g\circ g)'(t)$\\
+d) $(f\circ f)'(u)$\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 7. Due on Monday, October 18} \\
+\end{center}\
+\\
+\\
+\textbf{1.} 10 points\\
+\  If  $1+f(x)+x^{2}\cdot[f(x)]^{3}=5x+x^{2}$ and $f(1)=2$, find $f'(1).$\\
+\\
+\textbf{2.} 15 points\\
+\  Prove that $\Frac{d}{dx}\{\arccos(x)\}=-\Frac{1}{\Sqrt{1-x^{2}}} $, whenever  $-1<x<1$. 
+\\
+\\
+\\
+\textbf{3.} \  10 points each.\\
+page 181, $\sharp24$, $\sharp26$ and $\sharp28$
+\\
+\\
+The following definition can be found on page 179: the
+\textbf{normal} is the line perpendicular to the tangent of the
+profile curve at the point of entry. For more details, read the
+example on page 180.\\
+\\
+\textbf{4.} page 182, $\sharp36$. ( 15 points )\\
+\\
+\textbf{5.} page 182, $\sharp38$. ( 15 points )\\
+\\
+\textbf{6.} page 182, $\sharp42$. ( 15 points )\\
+\\\\\\\\\\\\\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 8. Due on Monday, October 25} \\
+\end{center}\
+\\
+\textbf{1.}\ 10 points each.\\
+Use logarithmic differentiation to find the derivatives of the
+function.\\
+\\
+A)\ $y=x^{\sin(x)}$\\
+\\
+B)\ $y=\Big(\sin(x)\Big)^{x}$\\
+\\
+C)\ $y=\Big(\ln(x)\Big)^{\cos(x)}$\\
+\\
+D)\ $y=\Frac{(2x+1)^{5}(x^{4}-3)^{6}}{(3x-1)^{2}}$\\
+\\
+\\
+\textbf{2.}\ 5 points each.\\
+Find the derivative of the function. Simplify where possible.\\
+A)\ $y=\arctan(\cos(x))$.\\
+B)\ $y=(1-x^2)\arcsin(x)$.\\
+C)\ $y=\sin^{-1}(2x+1)$.\\
+D)\ $y=(1+x^{2})\arctan(x)$.\\
+\\
+\\
+\textbf{3.}\ 20 points.\\
+Find $y'$ if $x^{y}=y^{x}$. Recall that $y$ is a function depending
+on $x$.
+\\
+\\
+\\
+\textbf{4.}\ 10 points each.\\
+\\
+A)  Show that the function $y=x\cdot\cos^{-1}(x)-\sqrt{1-x^2}$ satisfies the following equality
+$$x\cdot y'=y+\sqrt{1-x^2}$$
+\\
+B)  Show that the function $g(x)=(1+4x^{2})\cdot \arctan(2x)$ satisfies the following equality
+$$(1+4x^{2})\cdot (g'(x)-2)=8\cdot x\cdot g(x)$$
+\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 9. Due on Monday, November 8} \\
+\end{center}\
+%textbf{Esta tarea corresponde a las secciones 3.10,\ 4.7,\ 4.1}\\
+\\
+\\
+\textbf{1.}\ 20 points.\\
+Use Newton's method to estimate one real solution of $x^{3}+3x+1=0$.
+Start with $x_{0}=1$ and then find $x_{3}$.
+\\
+\\
+\textbf{2.}\ 20 points.\\
+Use the intermediate value theorem for continuous functions and show
+that there exists at least one root of the function
+$G(x)=x^{3}+3x+1$ in the open interval $(-1/2,-1/4)$. Then use
+Newton's method to estimate
+this root. Start with $x_{0}=-1/4$ and compute $x_{2}$.\\
+\\
+\textbf{3.}\ 20 points.\\
+Let $g(x)=|x^{3}-9x|$. Determine all extrema of $g$.\\
+\\
+\textbf{4.} 10 points each.\\
+Find the function's absolute extreme values on the interval and identify where they occur.\\
+\\
+a)\ $f(x)=x(10-2x)(16-2x)$,\ \ $[0,5]$\\
+\\
+b)\ $f(x)=x^{2/3}(3-x)$,\ \ $[-2,2]$\\
+\\
+\\
+\textbf{5.} 20 points.\\
+Consider the cubic function $$f(x)=ax^{3}+bx^{2}+cx+d\ .$$ Show that
+$f$ can have $0,1$ or $2$ \textbf{critical points}. Give examples to
+support your answer.
+\\\\\\\\\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 10. Due on Monday, November 15} \\
+\end{center}\
+\\
+\\
+\textbf{1.}\ 10 points.\\
+Suppose that $f$ is continuous on $[0,b]$ and $f'(x)$ exists for any
+$x\in(0,b)$. Assuming that $f'(x)\leq M$ and
+$f(0)=1$, show that $f(b)\leq 1+Mb$.\\
+\\
+\\
+\textbf{2.}\ 10 points.\\
+Prove that $|\sin(x)|\leq |x|$ for any $x\in\mathbb{R}$.\\
+\\
+\\
+\textbf{3.}\ 10 points.\\
+Let $n$ be a positive integer. Use the mean value theorem to deduce
+that
+$$n\cdot y^{n-1}(x-y)\leq x^{n}-y^{n}\leq n\cdot x^{n-1}(x-y)$$
+whenever $0<y\leq x$.\\
+\\
+\\
+\textbf{4.}\ 15 points each.\\
+Textbook: Page $252, \sharp9, \sharp10$.\\\\\\
+\textbf{5.}\ 10 points.\\
+Textbook: Page $252, \sharp16$.\\\\\\
+\textbf{6.} 15 points each.\\
+Textbook: Page $258, \sharp4, \sharp8$.\\\\\\
+\begin{flushright}
+Edgar Saenz.
+\end{flushright}
+\newpage
+\begin{center}
+\textbf{Homework 11. Due on Wednesday, December 1}
+\end{center}\
+\\
+\\
+\textbf{1.} Following the steps given in class, sketch the graph of
+the function $G(t)=3t^{5}-25t^{3}+60t$. Here the domain is
+$(-\infty, \infty)$.\ \textbf{Show your work.}\\\\\\
+\textbf{2.} Following the steps given in class, sketch the graph of
+the function $f(x)=x^{3}-x+1$ on the domain $[-2,2]$.\ \textbf{Show your work.}\\\\\\
+\textbf{3.} Following the steps given in class, sketch the graph of
+the function $g(x)=x^{2/3}(x-2)$. Here the domain is
+$(-\infty,\infty)$. Note that $0$ is one of the critical points.
+What is the other critical point?\ \textbf{Show your work.}\\\\\\
+\textbf{4.} A projectile travels along the curve, $y =3x-2$. At what
+point of the line is the projectile closest to the
+target located at $(2;0)$?\\\\\\
+\textbf{5.} Given a positive number $S$. \textbf{Prove} that among
+all the choices of positive numbers $x$ and $y$ with $x+y=S$ the
+product is largest when $x=y=\frac{1}{2}S$.\\\\\\
+\textbf{6.} Suppose you need to make a cylindrical can that will
+hold $1$ liter of water.  Determine the dimensions of the can that
+will minimize the amount of material used in its construction.
+\\\\\\
+\textbf{1.}\ 20 points.\\
+\textbf{2.}\ 20 points.\\
+\textbf{3.}\ 20 points.\\
+\textbf{4.}\ 10 points.\\
+\textbf{5.}\ 10 points.\\
+\textbf{6.}\ 20 points.\\
+\\
+\\
+\begin{flushright}
+%$\blacksquare$\\
+Edgar Saenz.
+\end{flushright}
+\end{document}
+
+

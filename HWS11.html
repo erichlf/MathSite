@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0066)http://www.math.vt.edu/people/jmkline2/Fall10/1205HomeworkF10.html -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Homework S11</title>
+	<link rel="stylesheet" type="text/css" href="http://www.math.vt.edu/people/erichlf/myweb.css">
+<script type="text/javascript"
+src="http://www.math.vt.edu/people/erichlf/jquery.min.js"></script> 
+<script type="text/javascript"> 
+ 
+$(document).ready(function() {
+ 
+	//Default Action
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+	
+	//On Click Event
+	$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active content
+		return false;
+	});
+ 
+});
+</script>
+</head>
+
+<body>
+	<div class="container">
+		<ul class="tabs">
+			<li><a href="#Homework">Calculus I</a></li>
+		</ul>
+	<div class="tab_container">
+	<div id="Homework" class="tab_content">
+Any changes to the following assignments will be announced in class.<br><br>
+<table>
+  <tbody>
+		<tr>
+    	<th scope="col" align="left">Homework</th>
+    	<th scope="col" align="center">Assignment</th>
+    	<th scope="col" align="center">Solution</th>
+    	<th scope="col" align="center">Due Date</th>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 0</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW0.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW0.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW0_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW0_Sol.tex">tex</a></td>
+    	<td align="center">24 January</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 1</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW1.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW1.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW1_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW1_Sol.tex">tex</a></td>
+    	<td align="center">24 January</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 2</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW2.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW2.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW2_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW2_Sol.tex">tex</a></td>
+    	<td align="center">31 January</td>
+  	</tr>
+  	<tr>
+  	<tr>
+    	<td align="left">Homework 2 Makeup</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW2_makeup.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW2_makeup.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW2_makeup_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW2_makeup_Sol.tex">tex</a></td>
+    	<td align="center">09 February</td>
+  	</tr>
+    	<td align="left">Homework 3</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW3.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW3.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW3_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW3_Sol.tex">tex</a></td>
+    	<td align="center">09 February</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 4</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW4.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW4.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW4_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW4_Sol.tex">tex</a></td>
+    	<td align="center">15 February</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 5</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW5.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW5.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW5_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW5_Sol.tex">tex</a></td>
+    	<td align="center">23 February</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 6</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW6.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW6.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW6_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW6_Sol.tex">tex</a></td>
+    	<td align="center">02 March</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 7</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW7.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW7.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW7_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW7_Sol.tex">tex</a></td>
+    	<td align="center">16 March</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 8</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW8.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW8.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW8_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW8_Sol.tex">tex</a></td>
+    	<td align="center">23 March</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 9</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW9.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW9.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW9_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW9_Sol.tex">tex</a></td>
+    	<td align="center">29 March</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 10</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW10.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW10.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW10_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW10_Sol.tex">tex</a></td>
+    	<td align="center">13 April</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 11</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW11.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW11.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW11_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW11_Sol.tex">tex</a></td>
+    	<td align="center">20 April</td>
+  	</tr>
+  	<tr>
+    	<td align="left">Homework 12</td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW12.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW12.tex">tex</a></td>
+    	<td align="center"><a href="http://www.math.vt.edu/people/erichlf/S11/HW12_Sol.pdf">pdf</a>, 
+			<a href="http://www.math.vt.edu/people/erichlf/S11/HW12_Sol.tex">tex</a></td>
+    <td align="center">26 April</br>In My Office by 3pm</td>
+  	</tr>
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="bottom">
+<a href="http://www.math.vt.edu/people/erichlf">Erich's Page</a><br/>
+<a href="http://www.math.vt.edu">Virginia Tech Department of Mathematics</a>
+</div> 
+</html>
