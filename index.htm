@@ -132,7 +132,62 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
               |\psi - \psi^h|_1 &\le C_1 \, h^5 , \label{eqn:H1Error} \\
               \|\psi - \psi^h\|_0 &\le C_0 \, h^6 . \label{eqn:L2Error}
             \end{align}
+
+    <b>Flow in Porous Media:</b>
+    As populations increase the demand for groundwater increases. In fact,
+    groundwater amounts to one-third of total freshwater consumption in the
+    world. Seawater intrusion is a major limiting factor on the utilization of
+    groundwater in coastal regions. As the seawater wedge progresses landward
+    existing pumping wells become saline and therefore have to be abandoned
+    \cite{Bear99}.
+
+    Harold R. Henry \cite{Henry60,Henry64} considered the problem of seawater
+    intrusion into coastal aquifers for the case of an isotropic homogeneous
+    confined aquifer, in which there is a steady flow of freshwater toward a
+    stationary body of higher density seawater. A constant flux of freshwater is
+    applied to the inland boundary, while a body of higher density seawater is
+    on the seaward side (See \autoref{fig:Domain}). Seawater therefore, intrudes
+    from the seaward boundary towards the inland boundary until an equilibrium
+    is reached between the heavier seawater and the lighter freshwater recharge
+    (See \autoref{fig:Seawater}).
+
+    Henry's semi-analytic solution to <i>seawater intrusion</i> has been used as
+    a benchmark for numerical simulations of seawater intrusion for many years
+    \cite{Simpson03}.  However, its ability to use parameters that are more
+    representative of narrow zones of diffusion has been limited
+    \cite{Abarca07}. The method used by Henry to evaluate his analytic solution
+    has been tempered by the limited ability to increase the number of Fourier
+    coefficients used, and this may possibly lead to the inability of those
+    methods to solve Henry's problem using parameters that would simulate narrow
+    zones of diffusion.
+
+    In \cite{Foster06}, I developed a new solver for Henry's semi-analytic
+    solution to seawater intrusion. The new solution method improved Henry's
+    semi-analytic solution as benchmark for numerical models of realistic
+    seawater-freshwater interfaces, by allowing for the use of more realistic
+    model parameters and thus improves the worthiness of Henry's problem as a
+    benchmark for numerical models.
+
             <textarea id="bibtex_input" style="display:none;">
+@article{Abarca07,
+author = {E. Abarca and J. Carrera and X. Sanchez-Vila and M. Dentz},
+title = {Anisotropic dispersive Henry problem},
+journal = {Adv. in Water Resour.},
+volume = {30},
+number = {4},
+pages = {913 - 926},
+year = {2007},
+note = {},
+issn = {0309-1708},
+doi = {DOI: 10.1016/j.advwatres.2006.08.005},
+url = {http://www.sciencedirect.com/science/article/B6VCF-4M1DB7C-1/2/dc42c9d2a2ddbb75dc663c6cd75d3823},
+keywords = {Seawater intrusion},
+keywords = {Henry problem},
+keywords = {Dispersion},
+keywords = {Transverse dispersion},
+keywords = {Anisotropy}
+}
+
 @article{Argyris,
 title={The {TUBA} family of plate elements for the matrix displacement
 method},
@@ -141,6 +196,14 @@ journal={Aero. J.},
 volume={72},
 pages={701-709},
 year={1968},
+}
+
+@BOOK{Bear99,
+author = {J. Bear and A. Cheng and S. Sorek and D. Oazar and I. Herrera},
+title = {Seawater Intrusion in Coastal Aquifers Concepts, Methods, and
+Practices},
+publisher = {Springer},
+year = {1999},
 }
 
 @BOOK{Brenner,
@@ -167,6 +230,31 @@ Equations of the Ocean},
 author={Foster, E. L. and Iliescu, T. and Wang, Z.},
 journal={Submitted},
 year={2012},
+}
+
+@PHDTHESIS{Henry60,
+  author = {H. R. Henry},
+  year = {1960},
+  title = {Salt Intrusion into Coastal Aquifers},
+  school = {Columbia University}
+}
+
+@ARTICLE{Henry64,
+  author = {H. R. Henry},
+  year = {1964},
+  title = {Effects of Dispersion on Salt Encroachment in Coastal Aquifers},
+  journal = {Sea Water in Coastal U. S. Aq. Geol. Surv. Water-Supply Pap.},
+  volume = {1613-C},
+  pages = {70-84}
+}
+
+@ARTICLE{Simpson03,
+  author = {M. J. Simpson and T. P. Clement},
+  year = {2003},
+  title = {Theoretical Analysis of the Worthiness of the Henry and Elder Problems as Benchmarks of Density-Dependent Groundwater Flow Models},
+  journal = {Adv. Water Resour.},
+  volume = {26},
+  pages={17-31}
 }
 
 @BOOK{Pedlosky,
