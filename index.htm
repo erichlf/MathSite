@@ -171,7 +171,7 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
 
             <textarea id="bibtex_input" style="display:none;">
 @article{Abarca07,
-author = {E. Abarca and J. Carrera and X. Sanchez-Vila and M. Dentz},
+author = {E. Abarca, J. Carrera, X. Sanchez-Vila, and M. Dentz},
 title = {Anisotropic dispersive Henry problem},
 journal = {Adv. in Water Resour.},
 volume = {30},
@@ -192,7 +192,7 @@ keywords = {Anisotropy}
 @article{Argyris,
 title={The {TUBA} family of plate elements for the matrix displacement
 method},
-author={{A}rgyris, J.H. and Fried, I. and Scharpf, D.W.},
+author={J. H. Argyris, I. Fried, and D. W. Scharpf},
 journal={Aero. J.},
 volume={72},
 pages={701-709},
@@ -200,7 +200,7 @@ year={1968},
 }
 
 @BOOK{Bear99,
-author = {J. Bear and A. Cheng and S. Sorek and D. Oazar and I. Herrera},
+author = {J. Bear, A. Cheng, S. Sorek, D. Oazar and I. Herrera},
 title = {Seawater Intrusion in Coastal Aquifers Concepts, Methods, and
 Practices},
 publisher = {Springer},
@@ -212,13 +212,13 @@ author = {S. C. Brenner and L. R. Scott},
 title = {The Mathematical Theory of Finite Element Methods},
 publisher = {Springer},
 year = {2000},
-edition = {Third},
+edition = {third},
 }
 
 @book{Dijkstra05,
 title = {Nonlinear Physical Oceanography: A Dynamical Systems Approach to the
 Large Scale Ocean Circulation and El Nino},
-author = {H. E. Dijkstra},
+author = {Dijkstra, H. E.},
 volume = {28},
 year = {2005},
 publisher = {Springer Verlag},
@@ -228,7 +228,7 @@ publisher = {Springer Verlag},
 title={A Finite Element Discretization of the Streamfunction Formulation of
 the Stationary Quasi-Geostrophic
 Equations of the Ocean},
-author={Foster, E. L. and Iliescu, T. and Wang, Z.},
+author={E. L. Foster, T. Iliescu and Z. Wang},
 journal={Submitted},
 year={2012},
 }
@@ -267,7 +267,7 @@ edition = {second},
 }
 
 @book{Vallis06,
-author = {Geoffrey K. Vallis},
+author = {G. K. Vallis},
 title = {Atmosphere and Ocean Fluid Dynamics: Fundamentals and Large-Scale
 Circulation},
 publisher = {Cambridge University Press},
@@ -276,28 +276,55 @@ year = {2006},
 
 @ONLINE{Wiki,
 author = {Wikipedia},
-title = {Fonctions d'{A}rgyris {@ONLINE}},
+title = {Fonctions d'{A}rgyris, http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
 month = {mar},
 year = {2011},
 url = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
 }
           </textarea>
           <div class="bibtex_template">
-            <div class="if author" style="font-weight: bold;">
-              <span class="if year">
-                <span class="year"></span>,
+            <li>
+              <span class="if author">
+                <span class="author"></span>.
               </span>
-              <span class="author"></span>
-              <span class="if url" style="margin-left: 20px">
+              <span class="title"></span>.
+              <span style="if journal" style="font-style: italic;">
+                <span class="journal"></span>,
+              </span>
+              <span style="if publisher">
+                <span class="publisher"></span>,
+              </span>
+              <span style="if school">
+                <span class="school"></span>
+              </span>
+              <span class="if volume">
+                <span class="volume"></span>
+                <span class="if number">
+                  (<span class="number"></span>)
+                </span>
+                <span class="if pages">
+                  :<span class="pages"></span>
+                </span>
+              </span>
+              <span class="if edition">
+                <span class="edition"></span> ed.,
+              </span>
+              <span class="if month">
+                <span class="month"></span>.
+              </span>
+              <span class="if year">
+                <span class="year"></span>.
+              </span>
+              <span class="if url">
                 <a class="url" style="color:black;
                   font-size:10px">(view online)</a>
               </span>
-            </div>
-            <div style="margin-left: 10px; margin-bottom:5px;">
-              <span class="title"></span>
-            </div>
+            </li>
           </div>
-          <div id="bibtex_display"></div>
+          <div class="header">
+          <h3>References</h3>
+          </div>
+          <ol><div id="bibtex_display"></div></ol>
 				</div>
         <div id="Teaching" class="tab_content">
             <h2>Teaching</h2>
