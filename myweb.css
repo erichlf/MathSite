@@ -120,7 +120,10 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
 .cvlinks a:before, .cvlinks a:after {
 	content: "|";
 }
-table td {
+.cvtable {
+  width: 100%;
+}
+.cvtable td {
 	padding-right: 10px;
 	vertical-align: top;
 }
