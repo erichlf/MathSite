@@ -68,33 +68,39 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
     </div>
     <div id="Research" class="tab_content">
       <div class="header"><h2>Current Research</h2> </div>
-      My current interests are in the application of mathematically justified
-      models and corresponding efficient algorithms to the areas of
-      <i>Large Eddy Simulation</i> (LES), in <i>climate modeling</i> and fluid
-      dynamics in general, and <i>flow in porous media</i> with an emphasis
-      on density dependent flow and contaminate transport. In both areas I
-      emphasize the use of <i>finite elements</i> (FE).
+      My research interests are centered around the development of
+      <i>mathematically justified</i> models and corresponding efficient,
+      accurate algorithms for <i>grand challenge problems</i> at the frontier of
+      computational science and engineering. My current interest is in the
+      application of these ideas to <i>climate modeling</i>, such as the
+      <i>Quasigeostrophic Flow Equations</i> (QGE), <i>flow in porous media</i>
+      with an emphasis on density dependent flow and contaminate transport.  In
+      both areas I emphasize the use of <i>finite elements</i> (FE), including
+      error analysis and efficient algorithms such as the <i>two-level
+      method</i>.
       </br></br>
       <b>Climate Modeling:</b></br>
-      <table width="265" border="0" align="left" cellpadding="5" cellspacing="0">
+      <table border="0" cellpadding="5" cellspacing="0">
         <tr><td align="center" valign="top" style="font-size: 80%;">
         <a name="OceanGyres" href="http://ars.els-cdn.com">
           <img src="OceanGyres.jpg" height="165" width="265">
         </a>
-        <b>Figure 1</b>: Subpolar and Sibtropical Gyres of the Mid-Atlantic
+        <b>Figure 1</b>: Subpolar and Subtropical Gyres of the Mid-Atlantic
         </td>
-        </tr>
-      </table>
+        <td valign="top">
       The <i>Quasigeostrophic</i> equations (QGE) are simplified models of large
       scale oceanic or atmospheric flows and are often used in climate modeling
       \cite{Dijkstra05}. The QGE describe a double gyre system that are
       characteristic of mid-latitude oceans \cite{Dijkstra05, Pedlosky, Vallis06}
       (See <a href="#OceanGyres">Figure 1</a>).  For the QGE, we consider the pure
       streamfunction form
+        </td>
+        </tr>
+      </table>
       \begin{equation}
         -\frac{\partial\left[ \Delta \psi\right]}{\partial t} + Re^{-1} \Delta^2 \psi
           + J(\psi, \Delta \psi) - Ro^{-1} \frac{\partial \psi}{\partial x} =
-          Ro^{-1} F, \quad \Omega
+          Ro^{-1} F,
         \label{eqn:QGE}
       \end{equation}
       where \(\psi\), \(Re\), and \(Ro\) are the streamfunction, the Reynolds number,
@@ -111,7 +117,7 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
       \psi}{\partial \mathbf{n}} = 0\). In \cite{Foster} we applied a FE element
       discretization to the QGE. This is the first time a \(C^1\) FE has been
       used to discretize the QGE. In \cite{Foster} we presented rigorous
-      error analysis and numerical experiments.
+      error analysis and numerical experiments.</p>
       </br></br>
       Most FE discretizations of the QGE are for the
       streamfunction-voriticity formulation of the QGE, and the reason is
@@ -123,9 +129,8 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
       time, optimal error estimates for the FE discretizations of the
       QGE.</br>
       <b>Theorem</b></br>
-        Take \(\dfrac{\partial \psi}{\partial t} = 0\), i.e. the stationary QGE. Let
-        \(\psi\) be the solution to the <i>weak form</i> of \eqref{eqn:QGE} and
-        \(\psi^h\) be the solution of the FE formulation of \eqref{eqn:QGE}.  Assume
+        Let \(\psi\) be the solution to the <i>stationary QGE</i> and
+        \(\psi^h\) be the solution of the FE formulation of stationary QGE.  Assume
         that the small data condition is satisfied:
         \begin{equation}
           Re^{-2} \, Ro
