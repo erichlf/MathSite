@@ -15,7 +15,7 @@ h1 {
   margin: 10px auto;
 }
 .tabs {
-  float: left;
+  float: center;
   width: 100%;
   background: #fff;
   border-bottom: 1px solid #000;
