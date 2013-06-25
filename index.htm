@@ -98,19 +98,14 @@ src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
         </tr>
       </table>
       \begin{equation}
-        -\frac{\partial\left[ \Delta \psi\right]}{\partial t} + Re^{-1} \Delta^2 \psi
-          + J(\psi, \Delta \psi) - Ro^{-1} \frac{\partial \psi}{\partial x} =
-          Ro^{-1} F,
+        -\Delta \psi_t} + Re^{-1} \Delta^2 \psi + J(\psi, \Delta \psi) 
+          - Ro^{-1} \psi_x} = Ro^{-1} F,
         \label{eqn:QGE}
       \end{equation}
       where \(\psi\), \(Re\), and \(Ro\) are the streamfunction, the Reynolds number,
       and Rossby number, respectively, while
       \[
-        J(\psi,\Delta \psi) =
-        \frac{\partial \psi}{\partial x}\,
-          \frac{\partial \left[\Delta \psi\right]}{\partial y}
-        - \frac{\partial \psi}{\partial y}\,
-          \frac{\partial \left[\Delta \psi\right]}{\partial x}
+        J(\psi,\Delta \psi) = \psi_x\, \Delta \psi_y - \psi_y\, \Delta \psi_x
       \]
       is the Jacobian and \(F\) is the external forcing. To completely specify the
       system we consider the boundary conditions \(\psi = \frac{\partial
@@ -357,26 +352,26 @@ url = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
           <h3>References</h3>
           </div>
           <ol><div id="bibtex_display"></div></ol>
-				</div>
-        <div id="Teaching" class="tab_content">
-            <h2>Teaching</h2>
-						<ul>
-							<li><a href="http://www.emporium.vt.edu/math1205/">Math 1205</a>
-							<ul>
-								<li><a href="http://www.math.vt.edu/people/erichlf/class_policy/1205_18666.html">Class Policy (HTML)</a>
-								<li><a href="http://www.math.vt.edu/people/erichlf/class_policy/1205_18666.pdf">Class Policy (PDF)</a>
-								<li><a href="http://www.math.vt.edu/people/erichlf/HWS11.html">Homework</a>
-							</ul>
-							<li>Office Hours: 11-12:30pm Tuesday and Thursday
-						</ul>
-						<h2>Resources</h2>
-						<ul>
-							<li><a href="http://www.emporium.vt.edu">Math Emporium</a></li>
-							<li><a href="hwset.cls">LaTeX Homework Class File</a></li>
-							<li><a href="hw-template.tex">LaTeX Homework Template</a></li>
-						</ul>
         </div>
-				<div id="CV" class="tab_content">
+        <div id="Teaching" class="tab_content">
+          <h2>Teaching</h2>
+            <ul>
+              <li><a href="http://www.emporium.vt.edu/math1205/">Math 1205</a>
+              <ul>
+                <li><a href="http://www.math.vt.edu/people/erichlf/class_policy/1205_18666.html">Class Policy (HTML)</a>
+                <li><a href="http://www.math.vt.edu/people/erichlf/class_policy/1205_18666.pdf">Class Policy (PDF)</a>
+                <li><a href="http://www.math.vt.edu/people/erichlf/HWS11.html">Homework</a>
+              </ul>
+              <li>Office Hours: 11-12:30pm Tuesday and Thursday
+            </ul>
+          <h2>Resources</h2>
+            <ul>
+              <li><a href="http://www.emporium.vt.edu">Math Emporium</a></li>
+              <li><a href="hwset.cls">LaTeX Homework Class File</a></li>
+              <li><a href="hw-template.tex">LaTeX Homework Template</a></li>
+            </ul>
+        </div>
+        <div id="CV" class="tab_content">
           <!--<iframe src="CV.html" height="1490"></iframe>-->
           <!--#include virtual="CV.shtml"-->
           <div class="header">
@@ -566,18 +561,19 @@ url = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
         <div id="Links" class="tab_content">
             <h2>Links</h2>
 						<ul>
-              <li><a href="http://www.math.vt.edu/people/iliescu">Traian Iliescu (My Advisor)</a>
+              <li><a href="http://www.bcamath.org">BCAM - Basque Center for
+                Applied Mathematics</a>
+              <li><a href="http://www.bcamath.org/en/people/efoster">My BCAM Site</a>
+              <li><a href="http://www.math.vt.edu/people/iliescu">Traian Iliescu (My PhD Advisor)</a>
 							<li><a href="http://www.ima.umn.edu/~wangzhu">Wang Zhu (My Academic Brother)</a>
 							<li><a href="http://www.math.vt.edu/people/drwells">Dave Wells (My Academic Brother)</a>
 							<li> <a href="http://www.math.vt.edu">Virginia Tech Department of Mathematics</a>
 							<li> <a href="http://www.icam.vt.edu">Interdisciplinary Center for
 							Applied Mathematics</a>
-							<li><a href="http://www.emporium.vt.edu">Math Emporium</a></li>
               <li><a href="http://www.sandia.gov">Sandia National Labs</a>
 							<li><a href="http://www.siam.org/">Society for Industrial and
 							Applied Mathematics</a>
 							<li><a href="http://www.ams.org/">American Mathematical Society</a>
-							<li><a href="http://www.latex-project.org/">LaTeX Project</a></li>
               <li><a href="http://www.github.com/lvleph">My GitHub Projects</a>
               <li><a href="http://www.github.com/VT-ICAM/ArgyrisPack">Argyris Pack</a></li>
               <li><a href="http://www.github.com/VT-ICAM/VTthesis">VT Thesis Class</a></li>
