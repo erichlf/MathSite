@@ -1,9 +1,9 @@
 html body {
-	background: #fff;
-	margin: 0;
-	padding: 0;
-	font: 10px normal Verdana, Arial, Helvetica, sans-serif;
-	color: #000;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  font: 10px normal Verdana, Arial, Helvetica, sans-serif;
+  color: #000;
   height: 100%;
 }
 h1 {
@@ -23,32 +23,32 @@ h1 {
   position: relative;
 }
 ul.tabs {
-  clear: left;
-	float: left;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  clear: center;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
   position: relative;
   text-align: center;
-	height: 22px;
+  height: 22px;
 }
 ul.tabs li {
   display: block;
-	float: left;
+  float: left;
   list-style: none;
-	margin: 0;
-	padding: 0;
-	border: none;
-	overflow: hidden;
-	position: relative;
-  left: 15%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  left: 25%;
 }
 ul.tabs li a {
-	display: block;
-	text-decoration: none;
-	color: #000;
-	font-size: 1.3em;
-	padding: 3px 20px;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 1.3em;
+  padding: 3px 20px;
 }
 ul.tabs li a:hover {
   font-weight: bold;
@@ -57,36 +57,36 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   font-weight: bold;
 }
 .tab_container {
-	width: 100%;
-	background: #fff;
+  width: 100%;
+  background: #fff;
   padding: 10px;
 }
 .tab_content {
-	padding: 20px;
-	font-size: 1.3em;
+  padding: 20px;
+  font-size: 1.3em;
   height: 100%;
 }
 .tab_content h2 {
-	font-weight: normal;
-	padding-bottom: 0px;
-	font-size: 1.6em;
+  font-weight: normal;
+  padding-bottom: 0px;
+  font-size: 1.6em;
 }
 .tab_content a, .tab_content a:visited {
-	color: #000000;
-	text-decoration: none;
+  color: #000000;
+  text-decoration: none;
 }
 .tab_content a:hover {
-	color: #000;
-	font-weight: bold;
-	text-decoration: underline;
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
 }
 .tab_content img {
-	float: left;
-	margin: 0 20px 20px 0;
-	border: 1px solid #ddd;
-	height: 180;
-	width: 120;
-	padding: 5px;
+  float: left;
+  margin: 0 20px 20px 0;
+  border: 1px solid #ddd;
+  height: 180;
+  width: 120;
+  padding: 5px;
 }
 .tab_content iframe {
   display: block;
@@ -96,34 +96,34 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   overflow-y: hidden;
 }
 .bottom {
-	clear: both;
-	display: block;
-	padding: 10px 0;
-	text-align: center;
+  clear: both;
+  display: block;
+  padding: 10px 0;
+  text-align: center;
 }
 .bottom a{
-	color: #000;
+  color: #000;
 }
 .bottom a:hover {
   font-weight: bold;
 }
 .header {
-	text-align: center;
+  text-align: center;
 }
 .header h4{
-	padding: -1em;
+  padding: -1em;
 }
 .cvlinks {
-	text-align: center;
-	font-size: 0.8em;
+  text-align: center;
+  font-size: 0.8em;
 }
 .cvlinks a:before, .cvlinks a:after {
-	content: "|";
+  content: "|";
 }
 .cvtable {
   width: 100%;
 }
 .cvtable td {
-	padding-right: 10px;
-	vertical-align: top;
+  padding-right: 10px;
+  vertical-align: top;
 }
