@@ -41,7 +41,7 @@ ul.tabs li {
   border: none;
   overflow: hidden;
   position: relative;
-  left: 25%;
+  left: 15%;
 }
 ul.tabs li a {
   display: block;
