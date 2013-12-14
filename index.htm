@@ -12,20 +12,20 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 
 $(document).ready(function() {
 
-	//Default Action
-	$(".tab_content").hide(); //Hide all content
-	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
-	$(".tab_content:first").show(); //Show first tab content
+    //Default Action
+    $(".tab_content").hide(); //Hide all content
+    $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+    $(".tab_content:first").show(); //Show first tab content
 
-	//On Click Event
-	$("ul.tabs li").click(function() {
-		$("ul.tabs li").removeClass("active"); //Remove any "active" class
-		$(this).addClass("active"); //Add "active" class to selected tab
-		$(".tab_content").hide(); //Hide all tab content
-		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
-		$(activeTab).fadeIn(); //Fade in the active content
-		return false;
-	});
+    //On Click Event
+    $("ul.tabs li").click(function() {
+            $("ul.tabs li").removeClass("active"); //Remove any "active" class
+            $(this).addClass("active"); //Add "active" class to selected tab
+            $(".tab_content").hide(); //Hide all tab content
+            var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+            $(activeTab).fadeIn(); //Fade in the active content
+            return false;
+    });
 
 });
 
@@ -595,7 +595,7 @@ url = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
 </div>
 </div>
 <div class="bottom">
-<a href="http://www.bcamath.org">BCAM - Basque Center for Applied Mathematics</a>
+  <a href="http://www.bcamath.org">BCAM - Basque Center for Applied Mathematics</a>
 </div>
 
 </body>
