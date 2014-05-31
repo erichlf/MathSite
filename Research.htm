@@ -1,0 +1,300 @@
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+<script type="text/javascript"
+  src="http://bibtex-js.googlecode.com/svn/trunk/src/bibtex_js.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      equationNumbers: { autoNumber: "AMS"}
+    }
+  });
+</script>
+
+<div class="header"><h2>Current Research</h2> </div>
+My research interests are centered around the development of
+<i>mathematically justified</i> models and corresponding efficient,
+accurate algorithms for <i>grand challenge problems</i> at the frontier of
+computational science and engineering. My current interest is in the
+application of these ideas to <i>climate modeling</i>, such as the
+<i>Quasi-Geostrophic Flow Equations</i> (QGE), <i>flow in porous media</i>
+with an emphasis on density dependent flow and contaminate transport.  In
+both areas I emphasize the use of <i>finite elements</i> (FE), including
+error analysis and efficient algorithms such as the <i>two-level
+method</i>.
+</br>
+<hr style="width: 100%; height: 2px;"><br>
+</br>
+<b>Climate Modeling:</b></br>
+<table border="0" cellpadding="5" cellspacing="0">
+  <tr><td align="center" valign="top" style="font-size: 80%;">
+  <a name="OceanGyres" href="OceanGyres.jpg">
+    <img src="OceanGyres.jpg" height="165" width="265">
+  </a>
+  <b>Figure 1</b>: Subpolar and Subtropical Gyres of the Mid-Atlantic
+  </td>
+  <td valign="top">
+The <i>Quasi-Geostrophic</i> equations (QGE) are simplified models of large
+scale oceanic or atmospheric flows and are often used in climate modeling
+\cite{Dijkstra05}. The QGE describe a double gyre system that are
+characteristic of mid-latitude oceans \cite{Dijkstra05, Pedlosky, Vallis06}
+(See <a href="#OceanGyres">Figure 1</a>).  For the QGE, we consider the pure
+streamfunction form
+  </td>
+  </tr>
+</table>
+\begin{equation}
+  -\Delta \psi_t + Re^{-1} \Delta^2 \psi + J(\psi, \Delta \psi) 
+    - Ro^{-1} \psi_x = Ro^{-1} F,
+  \label{eqn:QGE}
+\end{equation}
+where \(\psi\), \(Re\), and \(Ro\) are the streamfunction, the Reynolds number,
+and Rossby number, respectively, while
+\[
+  J(\psi,\Delta \psi) = \psi_x\, \Delta \psi_y - \psi_y\, \Delta \psi_x
+\]
+is the Jacobian and \(F\) is the external forcing. To completely specify
+the system we consider the boundary conditions \(\psi = \frac{\partial
+\psi}{\partial \mathbf{n}} = 0\). In \cite{Foster} we applied a finite
+element (FE) discretization to the QGE. This is the first time a \(C^1\)
+FE has been used to discretize the QGE. In \cite{Foster} we presented
+rigorous error analysis and numerical experiments.</p>
+Most FE discretizations of the QGE are for the
+streamfunction-voriticity formulation of the QGE, and the reason is
+simple. The pure streamfunction form is a fourth order PDE,
+requiring \(C^1\) FEs for conforming FEs, such as the Argyris element.
+However, the advantage of the pure streamfunction formulation is the
+reduction of two variables to a single variable.  In addition to
+algorithm development, I have proven in \cite{Foster}, for the first
+time, optimal error estimates for the FE discretizations of the
+QGE.</br></br>
+<b>Theorem</b> Let \(\psi\) be the solution to the <i>stationary QGE</i> and
+  \(\psi^h\) be the solution of the FE formulation of stationary QGE.  Assume
+  that the small data condition is satisfied:
+  \begin{equation}
+    Re^{-2} \, Ro
+    \geq \Gamma_1 \, \| F \|_{-2} .
+    \label{eqn:small_data_condition_dual}
+  \end{equation}
+  Furthermore, assume that \(\psi\in H^6(\Omega) \cap H^2_0(\Omega)\).  Then
+  there exist positive constants \(C_0, \, C_1 \text{ and } C_2\) that can
+  depend on \(Re\), \(Ro\), \(\Gamma_1\), \(F\), but <i>not</i> on the
+  mesh size \(h\),
+  such that
+  \begin{align}
+    |\psi - \psi^h|_2 &\le C_2 \, h^4 , \label{eqn:H2Error} \\
+    |\psi - \psi^h|_1 &\le C_1 \, h^5 , \label{eqn:H1Error} \\
+    \|\psi - \psi^h\|_0 &\le C_0 \, h^6 . \label{eqn:L2Error}
+  \end{align}
+</br>
+<hr style="width: 100%; height: 2px;"><br>
+</br>
+<b>Flow in Porous Media:</b></br>
+<table width="265" border="0" align="left" cellpadding="5" cellspacing="0">
+  <tr><td align="center" valign="top" style="font-size: 80%;">
+<a name="Seawater" href="Seawater.jpg"><img src="Seawater.jpg" height="150"></a>
+<b>Figure 2</b>: Depiction of Seawater Intrusion
+</td></tr>
+</table>
+As populations increase the demand for groundwater increases. In fact,
+groundwater amounts to one-third of total freshwater consumption in the
+world. Seawater intrusion is a major limiting factor on the utilization of
+groundwater in coastal regions. As the seawater wedge progresses landward
+existing pumping wells become saline and therefore have to be abandoned
+\cite{Bear99}.
+</br></br>
+Harold R. Henry \cite{Henry60,Henry64} considered the problem of seawater
+intrusion into coastal aquifers for the case of an isotropic homogeneous
+confined aquifer, in which there is a steady flow of freshwater toward a
+stationary body of higher density seawater. A constant flux of freshwater is
+applied to the inland boundary, while a body of higher density seawater is
+on the seaward side (See <a href="#Isochlors">Figure 3</a>). Seawater therefore, intrudes
+from the seaward boundary towards the inland boundary until an equilibrium
+is reached between the heavier seawater and the lighter freshwater recharge
+(See <a href="#Seawater">Figure 2</a>).
+</br></br>
+<table width="265" border="0" align="center" cellpadding="5" cellspacing="0">
+  <tr><td align="center" valign="top" style="font-size: 80%;">
+<a name="Isochlors" href="Isochlors.jpg"><img src="Isochlors.jpg" height="150"></a>
+<b>Figure 3</b>: New solver solution to Henry's Problem showing isochlor
+concentration \cite{Foster06}
+</td></tr>
+</table>
+</br></br>
+Henry's semi-analytic solution to <i>seawater intrusion</i> has been used as
+a benchmark for numerical simulations of seawater intrusion for many years
+\cite{Simpson03}.  However, its ability to use parameters that are more
+representative of narrow zones of diffusion has been limited
+\cite{Abarca07}. The method used by Henry to evaluate his analytic solution
+has been tempered by the limited ability to increase the number of Fourier
+coefficients used, and this may possibly lead to the inability of those
+methods to solve Henry's problem using parameters that would simulate narrow
+zones of diffusion.
+</br></br>
+In \cite{Foster06}, I developed a new solver for Henry's semi-analytic
+solution to seawater intrusion. The new solution method improved Henry's
+semi-analytic solution as benchmark for numerical models of realistic
+seawater-freshwater interfaces, by allowing for the use of more realistic
+model parameters and thus improves the worthiness of Henry's problem as a
+benchmark for numerical models.
+</br></br>
+
+<textarea id="bibtex_input" style="display:none;">
+@article{Abarca07,
+author = {E. Abarca, J. Carrera, X. Sanchez-Vila, and M. Dentz},
+title = {Anisotropic dispersive Henry problem},
+journal = {Adv. in Water Resour.},
+volume = {30},
+number = {4},
+pages = {913 - 926},
+year = {2007},
+note = {},
+issn = {0309-1708},
+doi = {DOI: 10.1016/j.advwatres.2006.08.005},
+url = {http://www.sciencedirect.com/science/article/B6VCF-4M1DB7C-1/2/dc42c9d2a2ddbb75dc663c6cd75d3823},
+keywords = {Seawater intrusion},
+keywords = {Henry problem},
+keywords = {Dispersion},
+keywords = {Transverse dispersion},
+keywords = {Anisotropy}
+}
+
+@article{Argyris,
+title={The {TUBA} family of plate elements for the matrix displacement
+method},
+author={J. H. Argyris, I. Fried, and D. W. Scharpf},
+journal={Aero. J.},
+volume={72},
+pages={701-709},
+year={1968},
+}
+
+@BOOK{Bear99,
+author = {J. Bear, A. Cheng, S. Sorek, D. Oazar and I. Herrera},
+title = {Seawater Intrusion in Coastal Aquifers Concepts, Methods, and
+Practices},
+publisher = {Springer},
+year = {1999},
+}
+
+@BOOK{Brenner,
+author = {S. C. Brenner and L. R. Scott},
+title = {The Mathematical Theory of Finite Element Methods},
+publisher = {Springer},
+year = {2000},
+edition = {third},
+}
+
+@book{Dijkstra05,
+title = {Nonlinear Physical Oceanography: A Dynamical Systems Approach to the
+Large Scale Ocean Circulation and El Nino},
+author = {Dijkstra, H. E.},
+volume = {28},
+year = {2005},
+publisher = {Springer Verlag},
+}
+
+@article{Foster,
+title={A Finite Element Discretization of the Streamfunction Formulation of
+the Stationary Quasi-Geostrophic
+Equations of the Ocean},
+author={E. L. Foster, T. Iliescu and Z. Wang},
+journal={CMAME},
+volume={261-262},
+pages={105-117},
+year={2013},
+url={http://www.sciencedirect.com/science/article/pii/S0045782513001060},
+}
+
+@PHDTHESIS{Henry60,
+author = {H. R. Henry},
+year = {1960},
+title = {Salt Intrusion into Coastal Aquifers},
+school = {Columbia University}
+}
+
+@ARTICLE{Henry64,
+author = {H. R. Henry},
+year = {1964},
+title = {Effects of Dispersion on Salt Encroachment in Coastal Aquifers},
+journal = {Sea Water in Coastal U. S. Aq. Geol. Surv. Water-Supply Pap.},
+volume = {1613-C},
+pages = {70-84}
+}
+
+@ARTICLE{Simpson03,
+author = {M. J. Simpson and T. P. Clement},
+year = {2003},
+title = {Theoretical Analysis of the Worthiness of the Henry and Elder Problems as Benchmarks of Density-Dependent Groundwater Flow Models},
+journal = {Adv. Water Resour.},
+volume = {26},
+pages={17-31}
+}
+
+@BOOK{Pedlosky,
+author = {J. Pedlosky},
+title = {Geophysical Fluid Dynamics},
+publisher = {Springer},
+year = {1992},
+edition = {second},
+}
+
+@book{Vallis06,
+author = {G. K. Vallis},
+title = {Atmosphere and Ocean Fluid Dynamics: Fundamentals and Large-Scale
+Circulation},
+publisher = {Cambridge University Press},
+year = {2006},
+}
+
+@ONLINE{Wiki,
+author = {Wikipedia},
+title = {Fonctions d'{A}rgyris, http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
+month = {mar},
+year = {2011},
+url = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
+}
+  </textarea>
+  <div class="bibtex_template">
+    <li>
+      <span class="if author">
+        <span class="author"></span>.
+      </span>
+      <span class="title"></span>.
+      <span style="if journal" style="font-style: italic;">
+        <span class="journal"></span>,
+      </span>
+      <span style="if publisher">
+        <span class="publisher"></span>,
+      </span>
+      <span style="if school">
+        <span class="school"></span>
+      </span>
+      <span class="if volume">
+        <span class="volume"></span>
+        <span class="if number">
+          (<span class="number"></span>)
+        </span>
+        <span class="if pages">
+          :<span class="pages"></span>,
+        </span>
+      </span>
+      <span class="if edition">
+        <span class="edition"></span> ed.,
+      </span>
+      <span class="if month">
+        <span class="month"></span>.
+      </span>
+      <span class="if year">
+        <span class="year"></span>.
+      </span>
+      <span class="if url">
+        <a class="url" style="color:black;
+          font-size:10px">(view online)</a>
+      </span>
+    </li>
+  </div>
+  <div class="header">
+  <h3>References</h3>
+  </div>
+  <ol><div id="bibtex_display"></div></ol>
+</div>
