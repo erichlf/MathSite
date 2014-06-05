@@ -24,21 +24,115 @@ method</i>.
 </br>
 <hr style="width: 100%; height: 2px;"><br>
 </br>
+<b>Wave Generation:</b></br>
+The problem of <i>wave generation</i> is complex and has many applications-- one
+such application is in the creation of artificial waves for <i>surfing</i>.
+Traditionally wave generators have used either paddles, on laboratory scale,
+or a mass of water, on larger scales, to generate waves. However, we
+consider a relatively new method of wave generation, that is, we consider an <i>underwater
+moving object</i> which displaces the water to create a wave. This idea of wave
+generation is similar to the way a <i>tsunami</i> is created, in which the wave is
+created by either an <i>underwater landslide or earthquake</i> [9]. This type of
+artificial wave generator has been recently developed at Wave Garden&copy;
+located in the Basque Country - Spain [8].  The design of such wave generators
+is generally done by trial and error. In collaboration with Enrique Zuazua,
+Denys Dutykh, and Robin Goix; our goal is to extend the work done by Nersisyan
+et al [10], where they considered the <i>optimal shape design</i> of such wave
+generators, from the 1-D case into the 2-D case.
+</br></br>
+
+<table width="265" border="0" align="left" cellpadding="5" cellspacing="0">
+  <tr><td align="center" valign="top" style="font-size: 80%;">
+<a name="Object" href="CartesianCoordinates.png"><img src="CartesianCoordinates.png" height="150"></a>
+<b>Figure 1</b>: Ocean cross-section with moving object \(\zeta\).
+</td></tr>
+</table>
+To this end, we consider \((x,y,z)\) a Cartesian coordinate system, with \(z\)
+measuring upwards from the average water level-- letting \(\eta(x,y,t)\) be
+the height of the free surface at a time \(t\), and \(h(x,y,t) = D(x,y) +
+\zeta(x,y,t)\) the seabed profile, which is assumed to be the sum of a
+time-independent part \(D\), the seabed elevation, and a time-dependant part
+\(\zeta\), the underwater moving object (see <a href=#Object>Figure 2</a>).
+</br></br>
+
+With this description of the wave generator in place the following
+Boussinesq system can be derived from the Euler equations [9,12]
+\begin{equation}
+  \begin{split}
+    \mathbf{u}_t + \nabla \eta + \epsilon (\mathbf{u} \cdot \nabla) \mathbf{u}
+        &- \sigma^2\frac{h}{2}\nabla (\nabla \cdot (h \mathbf{u}_t))
+        + \sigma^2 \frac{h^2}{6}\nabla (\nabla \cdot \mathbf{u}_t)
+        - \sigma^2\frac{h}{2}\nabla \zeta_{tt}
+        = \mathcal{O}(\epsilon \sigma^2, \sigma^4) \\
+    &\qquad\eta_t+\zeta_t + \nabla \cdot [(h+\epsilon\eta)\mathbf{u}] = 0
+  \end{split}
+  \label{eqn:Peregrine}
+\end{equation}
+While this model can be discretized in a pretty straight forward manner,
+using <i>Taylor-Hood</i> finite elements, the time required to resolve all scales,
+when realistic parameter values are used, is unreasonable when considering the
+wave object will need to be optimized. By not resolving all scales one can
+save time, however stability is lost and the solution is not accurate (see
+<a href=#Object>Figure 2</a>). Thus, numerical methods which improve <i>computational
+time</i> while not sacrificing accuracy are crucial to be able to optimize the
+wave object. To this end, we plan on using <i>mesh adaptive stabilization</i> to improve
+computational time, efficiency, and stability. As can be seen the initial
+results for the stabilized \(P^1-P^1\) FE (\autoref{sfig:Stable}), without
+adaptivity, clearly results in a solution which appears to be more stable,
+but the size of the wave appears to be smaller than the solution given by
+the fine mesh (\autoref{sfig:Fine}). However, the solution for the stabilized
+\(P^1-P^1\) FE took 50% less time as compared to the Taylor-Hood FE on the
+same mesh.
+<table border="0" cellpadding="5" cellspacing="0" align="center">
+  <tr>
+    <td align="center" valign="top" style="font-size: 80%;">
+       <video poster="WaveGeneratorCoarse.png" width="165" height="265" controls>
+         <source src="WaveGeneratorCoarse.ogv" type="video/ogg">
+         <img src="WaveGeneratorCoarse.png" height="165" width="265">
+       </video></br> 
+       <b>Figure 2a</b>: Coarse mesh (\(4\,335\) DoFs).
+     </td>
+    <td align="center" valign="top" style="font-size: 80%;">
+       <video poster="WaveGeneratorFine.png" width="165" height="265" controls>
+         <source src="WaveGeneratorFine.ogv" type="video/ogg">
+         <img src="WaveGeneratorFine.png" height="165" width="265">
+       </video></br> 
+       <b>Figure 2b</b>: Fine mesh (\(28\,395\) DoFs).
+     </td>
+    <td align="center" valign="top" style="font-size: 80%;">
+       <video poster="WaveGeneratorStable.png" width="165" height="265" controls>
+         <source src="WaveGeneratorStable.ogv" type="video/ogg">
+         <img src="WaveGeneratorStable.png" height="165" width="265">
+       </video></br> 
+       <b>Figure 2c</b>: Stabilized solution on fine mesh (\(28\,395\) DoFs).
+     </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <b>Figure 2</b>:Comparison of coarse mesh using Taylor-Hood FEs, 3a, fine
+      mesh using Taylor-Hood FEs, 3b, and stabilized \(P^1-P^1\) FEs, 3c,
+      solutions to the wave generator problem, \eqref{eqn:Peregrine}, using
+      FEniCS.
+    </td>
+  </tr>
+</table>
+<hr style="width: 100%; height: 2px;"><br>
+</br>
+
 <b>Climate Modeling:</b></br>
 <table border="0" cellpadding="5" cellspacing="0">
   <tr><td align="center" valign="top" style="font-size: 80%;">
   <a name="OceanGyres" href="OceanGyres.jpg">
     <img src="OceanGyres.jpg" height="165" width="265">
   </a>
-  <b>Figure 1</b>: Subpolar and Subtropical Gyres of the Mid-Atlantic
+  <b>Figure 3</b>: Subpolar and Subtropical Gyres of the Mid-Atlantic
   </td>
   <td valign="top">
 The <i>Quasi-Geostrophic</i> equations (QGE) are simplified models of large
 scale oceanic or atmospheric flows and are often used in climate modeling
-\cite{Dijkstra05}. The QGE describe a double gyre system that are
-characteristic of mid-latitude oceans \cite{Dijkstra05, Pedlosky, Vallis06}
-(See <a href="#OceanGyres">Figure 1</a>).  For the QGE, we consider the pure
-streamfunction form
+[3]. The QGE describe a double gyre system that are
+characteristic of mid-latitude oceans [3,8,11] (See <a href="#OceanGyres">Figure 1</a>).  
+For the QGE, we consider the pure streamfunction form
   </td>
   </tr>
 </table>
@@ -54,9 +148,9 @@ and Rossby number, respectively, while
 \]
 is the Jacobian and \(F\) is the external forcing. To completely specify
 the system we consider the boundary conditions \(\psi = \frac{\partial
-\psi}{\partial \mathbf{n}} = 0\). In \cite{Foster} we applied a finite
+\psi}{\partial \mathbf{n}} = 0\). In [5] we applied a finite
 element (FE) discretization to the QGE. This is the first time a \(C^1\)
-FE has been used to discretize the QGE. In \cite{Foster} we presented
+FE has been used to discretize the QGE. In [5] we presented
 rigorous error analysis and numerical experiments.</p>
 Most FE discretizations of the QGE are for the
 streamfunction-voriticity formulation of the QGE, and the reason is
@@ -64,7 +158,7 @@ simple. The pure streamfunction form is a fourth order PDE,
 requiring \(C^1\) FEs for conforming FEs, such as the Argyris element.
 However, the advantage of the pure streamfunction formulation is the
 reduction of two variables to a single variable.  In addition to
-algorithm development, I have proven in \cite{Foster}, for the first
+algorithm development, I have proven in [5], for the first
 time, optimal error estimates for the FE discretizations of the
 QGE.</br></br>
 <b>Theorem</b> Let \(\psi\) be the solution to the <i>stationary QGE</i> and
@@ -86,174 +180,212 @@ QGE.</br></br>
     \|\psi - \psi^h\|_0 &\le C_0 \, h^6 . \label{eqn:L2Error}
   \end{align}
 </br>
+While in [7] I proved a similar result for the time-dependent QGE.
+<table border="0" cellpadding="5" cellspacing="0" align="center">
+  <tr>
+    <td align="center" valign="top" style="font-size: 80%;">
+       <video poster="QGERe451Ro3_205E-3N64K100_psi.png" width="165" height="265" controls>
+         <source src="QGERe451Ro3_205E-3N64K100_psi.ogv" type="video/ogg">
+         <img src="QGERe451Ro3_205E-3N64K100_psi.png" height="165" width="265">
+         </video></br> 
+       <b>Figure 4a</b>: Streamfunction, \(\psi\).
+     </td>
+    <td align="center" valign="top" style="font-size: 80%;">
+       <video poster="QGERe451Ro3_205E-3N64K100_q.png" width="165" height="265" controls>
+         <source src="QGERe451Ro3_205E-3N64K100_q.ogv" type="video/ogg">
+         <img src="QGERe451Ro3_205E-3N64K100_q.png" height="165" width="265">
+         </video></br>
+       <b>Figure 4b</b>:Vorticity, \(q\).
+     </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+       <b>Figure 4</b>: Double Gyre Simulatioin of QGE, \(Re=451,\,
+       Ro=3.205\times 10^{-3}\).
+    </td>
+  </tr>
+</table>
 <hr style="width: 100%; height: 2px;"><br>
 </br>
-<b>Flow in Porous Media:</b></br>
-<table width="265" border="0" align="left" cellpadding="5" cellspacing="0">
-  <tr><td align="center" valign="top" style="font-size: 80%;">
-<a name="Seawater" href="Seawater.jpg"><img src="Seawater.jpg" height="150"></a>
-<b>Figure 2</b>: Depiction of Seawater Intrusion
-</td></tr>
-</table>
-As populations increase the demand for groundwater increases. In fact,
-groundwater amounts to one-third of total freshwater consumption in the
-world. Seawater intrusion is a major limiting factor on the utilization of
-groundwater in coastal regions. As the seawater wedge progresses landward
-existing pumping wells become saline and therefore have to be abandoned
-\cite{Bear99}.
-</br></br>
-Harold R. Henry \cite{Henry60,Henry64} considered the problem of seawater
-intrusion into coastal aquifers for the case of an isotropic homogeneous
-confined aquifer, in which there is a steady flow of freshwater toward a
-stationary body of higher density seawater. A constant flux of freshwater is
-applied to the inland boundary, while a body of higher density seawater is
-on the seaward side (See <a href="#Isochlors">Figure 3</a>). Seawater therefore, intrudes
-from the seaward boundary towards the inland boundary until an equilibrium
-is reached between the heavier seawater and the lighter freshwater recharge
-(See <a href="#Seawater">Figure 2</a>).
-</br></br>
-<table width="265" border="0" align="center" cellpadding="5" cellspacing="0">
-  <tr><td align="center" valign="top" style="font-size: 80%;">
-<a name="Isochlors" href="Isochlors.jpg"><img src="Isochlors.jpg" height="150"></a>
-<b>Figure 3</b>: New solver solution to Henry's Problem showing isochlor
-concentration \cite{Foster06}
-</td></tr>
-</table>
-</br></br>
-Henry's semi-analytic solution to <i>seawater intrusion</i> has been used as
-a benchmark for numerical simulations of seawater intrusion for many years
-\cite{Simpson03}.  However, its ability to use parameters that are more
-representative of narrow zones of diffusion has been limited
-\cite{Abarca07}. The method used by Henry to evaluate his analytic solution
-has been tempered by the limited ability to increase the number of Fourier
-coefficients used, and this may possibly lead to the inability of those
-methods to solve Henry's problem using parameters that would simulate narrow
-zones of diffusion.
-</br></br>
-In \cite{Foster06}, I developed a new solver for Henry's semi-analytic
-solution to seawater intrusion. The new solution method improved Henry's
-semi-analytic solution as benchmark for numerical models of realistic
-seawater-freshwater interfaces, by allowing for the use of more realistic
-model parameters and thus improves the worthiness of Henry's problem as a
-benchmark for numerical models.
-</br></br>
+<hr style="width: 100%; height: 2px;"><br>
+</br>
 
 <textarea id="bibtex_input" style="display:none;">
-@article{Abarca07,
-author = {E. Abarca, J. Carrera, X. Sanchez-Vila, and M. Dentz},
-title = {Anisotropic dispersive Henry problem},
-journal = {Adv. in Water Resour.},
-volume = {30},
-number = {4},
-pages = {913 - 926},
-year = {2007},
-note = {},
-issn = {0309-1708},
-doi = {DOI: 10.1016/j.advwatres.2006.08.005},
-url = {http://www.sciencedirect.com/science/article/B6VCF-4M1DB7C-1/2/dc42c9d2a2ddbb75dc663c6cd75d3823},
-keywords = {Seawater intrusion},
-keywords = {Henry problem},
-keywords = {Dispersion},
-keywords = {Transverse dispersion},
-keywords = {Anisotropy}
-}
 
 @article{Argyris,
-title={The {TUBA} family of plate elements for the matrix displacement
-method},
-author={J. H. Argyris, I. Fried, and D. W. Scharpf},
-journal={Aero. J.},
-volume={72},
-pages={701-709},
-year={1968},
-}
-
-@BOOK{Bear99,
-author = {J. Bear, A. Cheng, S. Sorek, D. Oazar and I. Herrera},
-title = {Seawater Intrusion in Coastal Aquifers Concepts, Methods, and
-Practices},
-publisher = {Springer},
-year = {1999},
+  title          = {The {TUBA} family of plate elements for the matrix displacement
+                    method},
+  author         = {J. H. Argyris, I. Fried, and D. W. Scharpf},
+  journal        = {Aero. J.},
+  volume         = {72},
+  pages          = {701-709},
+  year           = {1968},
 }
 
 @BOOK{Brenner,
-author = {S. C. Brenner and L. R. Scott},
-title = {The Mathematical Theory of Finite Element Methods},
-publisher = {Springer},
-year = {2000},
-edition = {third},
+  author         = {S. C. Brenner, and L. R. Scott},
+  title          = {The Mathematical Theory of Finite Element Methods},
+  publisher      = {Springer},
+  year           = {2000},
+  edition        = {third},
 }
 
 @book{Dijkstra05,
-title = {Nonlinear Physical Oceanography: A Dynamical Systems Approach to the
-Large Scale Ocean Circulation and El Nino},
-author = {Dijkstra, H. E.},
-volume = {28},
-year = {2005},
-publisher = {Springer Verlag},
+  title          = {Nonlinear Physical Oceanography: A Dynamical Systems Approach to the
+                    Large Scale Ocean Circulation, and El Nino},
+  author         = {H. E. Dijkstra},
+  volume         = {28},
+  year           = {2005},
+  publisher      = {Springer Verlag},
+}
+
+@Article{Dutykh2014,
+  Author         = {D. Dutykh, E. L. Foster, R. Goix, and E. Zuazua},
+  Title          = {Optimization of Three-Dimensional Water Waves by
+                   Moving Bottom Disturbances},
+  Journal        = {In Preparation},
+  keywords       = {preparation},
+  year           = 2014
 }
 
 @article{Foster,
-title={A Finite Element Discretization of the Streamfunction Formulation of
-the Stationary Quasi-Geostrophic
-Equations of the Ocean},
-author={E. L. Foster, T. Iliescu and Z. Wang},
-journal={CMAME},
-volume={261-262},
-pages={105-117},
-year={2013},
-url={http://www.sciencedirect.com/science/article/pii/S0045782513001060},
+  title          = {A Finite Element Discretization of the Streamfunction Formulation of the Stationary Quasi-Geostrophic
+                    Equations of the Ocean},
+  author         = {E. L. Foster, T. Iliescu, and Z. Wang},
+  journal        = {CMAME},
+  volume         = {261-262},
+  pages          = {105-117},
+  year           = {2013},
+  url            = {http://www.sciencedirect.com/science/article/pii/S0045782513001060},
 }
 
-@PHDTHESIS{Henry60,
-author = {H. R. Henry},
-year = {1960},
-title = {Salt Intrusion into Coastal Aquifers},
-school = {Columbia University}
+@PhdThesis{FosterThesis,
+  Author         = {E. L. Foster},
+  Title          = {Finite Elements for the quasi-geostrophic equations of
+                   the ocean},
+  School         = {Virginia Polytechnic Institute and State University},
+  abstract       = { The quasi-geostrophic equations (QGE) are usually
+                   discretized in space by the finite difference method.
+                   The finite element (FE) method, however, offers several
+                   advantages over the finite difference method, such as
+                   the easy treatment of complex boundaries and a natural
+                   treatment of boundary conditions. Despite these
+                   advantages, there are relatively few papers that
+                   consider the FE method applied to the QGE. Most FE
+                   discretizations of the QGE have been developed for the
+                   streamfunction-vorticity formulation. The reason is
+                   simple: The streamfunction-vorticity formulation yields
+                   a second order \emph{partial differential equation
+                   (PDE)}, whereas the streamfunction formulation yields a
+                   fourth order PDE. Thus, although the
+                   streamfunction-vorticity formulation has two variables
+                   (\(q$ and $\psi\)) and the streamfunction formulation has
+                   just one (\(\psi\)), the former is the preferred
+                   formulation used in practical computations, since its
+                   conforming FE discretization requires low-order (\(C^0\))
+                   elements, whereas the latter requires a high-order
+                   (\(C^1\)) FE discretization. We present a conforming FE
+                   discretization of the QGE based on the Argyris element
+                   and we present a two-level FE discretization of the
+                   Stationary QGE (SQGE) based on the same conforming FE
+                   discretization using the Argyris element. We also, for
+                   the first time, develop optimal error estimates for the
+                   FE discretization QGE. Numerical tests for the FE
+                   discretization and the two-level FE discretization of
+                   the QGE are presented and theoretical error estimates
+                   are verified. By benchmarking the numerical results
+                   against those in the published literature, we conclude
+                   that our FE discretization is accurate. Furthermore,
+                   the numerical results have the same convergence rates
+                   as those predicted by the theoretical error estimates.},
+  date-added     = {2013-09-08 11:21:29 +0000},
+  date-modified  = {2013-09-08 11:42:18 +0000},
+  year           = 2013
 }
 
-@ARTICLE{Henry64,
-author = {H. R. Henry},
-year = {1964},
-title = {Effects of Dispersion on Salt Encroachment in Coastal Aquifers},
-journal = {Sea Water in Coastal U. S. Aq. Geol. Surv. Water-Supply Pap.},
-volume = {1613-C},
-pages = {70-84}
+@Article{Foster2014b,
+  Author         = {E. L. Foster, T. Iliescu and D. R. Wells},
+  Title          = {A conforming finite element discretization of the
+                   streamfunction form of the quasi-geostrophic equations},
+  Journal        = {Submitted},
+  abstract       = {This paper presents a conforming finite element
+                   semi-discretization of the streamfunction form of the
+                   one-layer quasi-geostrophic equation, which are a
+                   commonly used model for the large scale wind-driven
+                   ocean circulation. We prove for the first time optimal
+                   error estimates for the time-dependent
+                   quasi-geostrophic equations. Additionally, we
+                   demonstrate these rates of convergence numerically.},
+  date-added     = {2013-09-08 11:21:29 +0000},
+  date-modified  = {2013-09-08 11:35:22 +0000},
+  keywords       = {refereed},
+  url            = {http://arxiv.org/abs/1405.7836},
+  year           = 2014
 }
 
-@ARTICLE{Simpson03,
-author = {M. J. Simpson and T. P. Clement},
-year = {2003},
-title = {Theoretical Analysis of the Worthiness of the Henry and Elder Problems as Benchmarks of Density-Dependent Groundwater Flow Models},
-journal = {Adv. Water Resour.},
-volume = {26},
-pages={17-31}
+@Misc{WaveGarden,
+  Author         = {Instant Sport S. L.},
+  Title          = {The {W}ave {G}arden Concept},
+  url            = {http://www.wavegarden.com/lang/en-us/concept},
+  month          = {may},
+  year           = 2014
+}
+
+@TechReport{Mitsotakis2013,
+  Author         = {D. Mitsotakis},
+  Title          = {Boussinesq systems in two space dimensions over a
+                   variable bottom for the generation and propagation of
+                   tsunami waves},
+  Type           = {Technical Report},
+  date-added     = {2013-10-08 13:09:15 +0000},
+  date-modified  = {2013-11-12 11:48:58 +0000},
+  file           = {file:///home/BCAMATH/efoster/Research/Papers/Mitsotakis2013.pdf},
+  year           = 2013
+}
+
+@Article{Nersisyan2012,
+  Author         = {H. Nersisyan, D. Dutykh, and E. Zuazua},
+  Title          = {Generation of Two-Dimensional Water Wavesby Moving
+                   Bottom Disturbance},
+  Journal        = {submitted},
+  file           = {file:///home/BCAMATH/efoster/Documents/Research/Papers/Nersisyan2012.pdf},
+  year           = 2012
 }
 
 @BOOK{Pedlosky,
-author = {J. Pedlosky},
-title = {Geophysical Fluid Dynamics},
-publisher = {Springer},
-year = {1992},
-edition = {second},
+  author         = {J. Pedlosky},
+  title          = {Geophysical Fluid Dynamics},
+  publisher      = {Springer},
+  year           = {1992},
+  edition        = {second},
+}
+
+@Article{Peregrine1967,
+  Author         = {D. H. Peregrine},
+  Title          = {Long Waves on a Beach},
+  Journal        = {J. Fluid Mech.},
+  Volume         = {27},
+  Number         = {4},
+  Pages          = {815-827},
+  file           = {file:///home/BCAMATH/efoster/Documents/Research/Papers/Peregrine1967.pdf},
+  year           = 1967
 }
 
 @book{Vallis06,
-author = {G. K. Vallis},
-title = {Atmosphere and Ocean Fluid Dynamics: Fundamentals and Large-Scale
-Circulation},
-publisher = {Cambridge University Press},
-year = {2006},
+  author         = {G. K. Vallis},
+  title          = {Atmosphere and Ocean Fluid Dynamics: Fundamentals and Large-Scale Circulation},
+  publisher      = {Cambridge University Press},
+  year           = {2006},
 }
 
 @ONLINE{Wiki,
-author = {Wikipedia},
-title = {Fonctions d'{A}rgyris, http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
-month = {mar},
-year = {2011},
-url = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
+  author         = {Wikipedia},
+  title          = {Fonctions d'{A}rgyris, http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
+  month          = {mar},
+  year           = {2011},
+  url            = {http://fr.wikipedia.org/wiki/Fonctions_d'{A}rgyris},
 }
-  </textarea>
+</textarea>
   <div class="bibtex_template">
     <li>
       <span class="if author">
