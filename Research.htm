@@ -52,7 +52,7 @@ measuring upwards from the average water level-- letting \(\eta(x,y,t)\) be
 the height of the free surface at a time \(t\), and \(h(x,y,t) = D(x,y) +
 \zeta(x,y,t)\) the seabed profile, which is assumed to be the sum of a
 time-independent part \(D\), the seabed elevation, and a time-dependant part
-\(\zeta\), the underwater moving object (see <a href=#Object>Figure 2</a>).
+\(\zeta\), the underwater moving object (see <a href=#Object>Figure 1</a>).
 </br></br>
 
 With this description of the wave generator in place the following
@@ -75,14 +75,14 @@ using <i>Taylor-Hood</i> finite elements, the time required to resolve all scale
 when realistic parameter values are used, is unreasonable when considering the
 wave object will need to be optimized. By not resolving all scales one can
 save time, however stability is lost and the solution is not accurate (see
-<a href=#Object>Figure 2</a>). Thus, numerical methods which improve <i>computational
+<a href=#Object>Figure 1</a>). Thus, numerical methods which improve <i>computational
 time</i> while not sacrificing accuracy are crucial to be able to optimize the
 wave object. To this end, we plan on using <i>mesh adaptive stabilization</i> to improve
 computational time, efficiency, and stability. As can be seen the initial
-results for the stabilized \(P^1-P^1\) FE (\autoref{sfig:Stable}), without
+results for the stabilized \(P^1-P^1\) FE (<a href=#Stable>Figure 2c</a>), without
 adaptivity, clearly results in a solution which appears to be more stable,
 but the size of the wave appears to be smaller than the solution given by
-the fine mesh (\autoref{sfig:Fine}). However, the solution for the stabilized
+the fine mesh (<a href=#Fine>Figure 2b</a>). However, the solution for the stabilized
 \(P^1-P^1\) FE took 50% less time as compared to the Taylor-Hood FE on the
 same mesh.
 <table border="0" cellpadding="5" cellspacing="0" align="center">
@@ -90,7 +90,7 @@ same mesh.
     <td align="center" valign="top" style="font-size: 80%;">
        <video poster="WaveGeneratorCoarse.png" width="165" height="265" controls>
          <source src="WaveGeneratorCoarse.ogv" type="video/ogg">
-         <img src="WaveGeneratorCoarse.png" height="165" width="265">
+         <a name="Coarse" href="WaveGeneratorCoarse.png"><img src="WaveGeneratorCoarse.png" height="165" width="265"></a>
        </video></br> 
        <b>Figure 2a</b>: Coarse mesh (\(4\,335\) DoFs).
      </td>
@@ -98,6 +98,7 @@ same mesh.
        <video poster="WaveGeneratorFine.png" width="165" height="265" controls>
          <source src="WaveGeneratorFine.ogv" type="video/ogg">
          <img src="WaveGeneratorFine.png" height="165" width="265">
+         <a name="Fine" href="WaveGeneratorFine.png"><img src="WaveGeneratorFine.png" height="165" width="265"></a>
        </video></br> 
        <b>Figure 2b</b>: Fine mesh (\(28\,395\) DoFs).
      </td>
@@ -105,6 +106,7 @@ same mesh.
        <video poster="WaveGeneratorStable.png" width="165" height="265" controls>
          <source src="WaveGeneratorStable.ogv" type="video/ogg">
          <img src="WaveGeneratorStable.png" height="165" width="265">
+         <a name="Stable" href="WaveGeneratorStable.png"><img src="WaveGeneratorStable.png" height="165" width="265"></a>
        </video></br> 
        <b>Figure 2c</b>: Stabilized solution on fine mesh (\(28\,395\) DoFs).
      </td>
@@ -133,7 +135,7 @@ same mesh.
 The <i>Quasi-Geostrophic</i> equations (QGE) are simplified models of large
 scale oceanic or atmospheric flows and are often used in climate modeling
 [3]. The QGE describe a double gyre system that are
-characteristic of mid-latitude oceans [3,8,11] (See <a href="#OceanGyres">Figure 1</a>).  
+characteristic of mid-latitude oceans [3,8,11] (See <a href="#OceanGyres">Figure 3</a>).  
 For the QGE, we consider the pure streamfunction form
   </td>
   </tr>
