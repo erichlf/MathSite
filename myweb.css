@@ -2,7 +2,7 @@ html body {
   background: #fff;
   margin: 0;
   padding: 0;
-  font: 10px normal Verdana, Arial, Helvetica, sans-serif;
+  font: 10px 'ArialMT', 'Arial', sans-serif;
   color: rgb(88, 77, 77);
   height: 100%;
 }
@@ -15,9 +15,9 @@ h1 {
   margin: 10px auto;
 }
 .tabs {
-  float: center;
+  float: left;
   width: 100%;
-  background: #fff;
+  background: #000;
   border-bottom: 1px solid #000;
   overflow: hidden;
   position: relative;
@@ -41,12 +41,11 @@ ul.tabs li {
   border: none;
   overflow: hidden;
   position: relative;
-  left: 15%;
 }
 ul.tabs li a {
   display: block;
   text-decoration: none;
-  color: rgb(88, 77, 77);
+  color: #999;
   font-size: 1.3em;
   padding: 3px 20px;
 }
@@ -55,10 +54,10 @@ ul.tabs li a:hover {
 }
 html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover  {
   font-weight: bold;
-  color: #000;
+  color: #fff;
 }
 .tab_container {
-  width: 100%;
+  width: 600px;
   background: #fff;
   padding: 10px;
 }
@@ -73,11 +72,11 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   font-size: 1.6em;
 }
 .tab_content a, .tab_content a:visited {
-  color: #000000;
+  color: #333;
   text-decoration: none;
 }
 .tab_content a:hover {
-  color: #000;
+  color: #333;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -103,7 +102,7 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   text-align: center;
 }
 .bottom a{
-  color: #000;
+  color: #333;
 }
 .bottom a:hover {
   font-weight: bold;
