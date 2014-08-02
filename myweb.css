@@ -1,5 +1,5 @@
 html body {
-  background: #fff;
+  background: #666;
   margin: 0;
   padding: 0;
   font: 10px 'ArialMT', 'Arial', sans-serif;
@@ -12,25 +12,23 @@ h1 {
 }
 .container {
   width: 600px;
-  margin: 10px auto;
+  margin: 5px auto;
 }
 .tabs {
   float: left;
   width: 100%;
   background: #000;
   border-bottom: 1px solid #000;
-  overflow: hidden;
-  position: relative;
+  border-radius: 5px 5px 0 0;
 }
 ul.tabs {
   clear: center;
   float: left;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 10px 0;
   position: relative;
   text-align: center;
-  height: 22px;
 }
 ul.tabs li {
   display: block;
@@ -57,19 +55,20 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   color: #fff;
 }
 .tab_container {
-  width: 600px;
+  width: 100%;
+  height: 100%;
   background: #fff;
-  padding: 10px;
+  padding: 10px 10px;
+  border-radius: 25px;
 }
 .tab_content {
-  padding: 20px;
   font-size: 1.3em;
   height: 100%;
 }
 .tab_content h2 {
   font-weight: normal;
-  padding-bottom: 0px;
   font-size: 1.6em;
+  margin: 20px 0 0 0;
 }
 .tab_content a, .tab_content a:visited {
   color: #333;
@@ -80,25 +79,40 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   font-weight: bold;
   text-decoration: underline;
 }
+.clearfix:after{
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.clearfix {display:inline-block;}
+/* Hide from IE Mac \*/
+.clearfix {display:block;}
+/* End hide from IE Mac */
+* html .clearfix {height:1px;}
 .tab_content img {
   float: left;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 0 0;
   border: 1px solid #ddd;
   height: 180;
   width: 120;
-  padding: 5px;
+  padding: 1px;
 }
-.tab_content iframe {
-  display: block;
-  width: 100%;
-  border: none;
-  overflow-x: hidden;
-  overflow-y: hidden;
+.tab_content caption {
+  font-weight: bold;
+  padding: 10px 0 5px;
+  text-align: left;
+}
+.tab_content h4{
+  font-weight: bold;
+  margin: 10px 0 0px 0;
+  text-align: left;
 }
 .bottom {
-  clear: both;
-  display: block;
-  padding: 10px 0;
+  width: 100%;
+  background: #fff;
+  padding: 10px 0 5px;
   text-align: center;
 }
 .bottom a{
@@ -109,9 +123,6 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
 }
 .header {
   text-align: center;
-}
-.header h4{
-  padding: -1em;
 }
 .cvlinks {
   text-align: center;
@@ -124,6 +135,6 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   width: 100%;
 }
 .cvtable td {
-  padding-right: 10px;
+  padding: 0 10px 0 0;
   vertical-align: top;
 }
