@@ -35,14 +35,12 @@ ul.tabs li:first-child {
   color: #ddd;
   font-weight: bold;
   font-size: 1.6em;
-}
-ul.tabs li.active:first-child {
-  float: left;
-  color: #ddd;
+  text-transform:uppercase;
 }
 ul.tabs li:nth-child(n+2) {
   position: relative;
   transform: translateY(50%);
+  text-transform:lowercase;
 }
 ul.tabs li {
   display: inline-block;
