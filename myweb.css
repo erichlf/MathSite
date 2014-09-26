@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
 html body {
-  background: #666;
+  background: #fff;
   margin: 0;
   padding: 0;
   font: 14px/1.2 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: rgb(88, 77, 77);
+  color: #111;
   height: 100%;
 }
 h1 {
@@ -19,8 +19,8 @@ h1 {
 .tabs {
   float: left;
   width: 100%;
-  background: #000;
-  border-bottom: 1px solid #000;
+  background: #fff;
+  border-bottom: 0px solid #000;
   border-radius: 5px 5px 0 0;
 }
 ul.tabs {
@@ -30,14 +30,14 @@ ul.tabs {
   padding: 0 10px 0;
   position: relative;
 }
-ul.tabs li:first-child {
+ul.tabs#top li:first-child {
   float: left;
   color: #ddd;
   font-weight: bold;
   font-size: 1.6em;
   text-transform:uppercase;
 }
-ul.tabs li:nth-child(n+2) {
+ul.tabs#top li:nth-child(n+2) {
   position: relative;
   transform: translateY(50%);
   text-transform:lowercase;
@@ -53,14 +53,14 @@ ul.tabs li {
 }
 ul.tabs li a {
   text-decoration: none;
-  color: #ccc;
+  color: #000;
 }
 ul.tabs li a:hover {
   font-weight: bold;
 }
 html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover  {
   font-weight: bold;
-  color: #fff;
+  color: #000;
 }
 .tab_container {
   width: 100%;
@@ -87,11 +87,10 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   margin: 20px 0 0 0;
 }
 .tab_content a, .tab_content a:visited {
-  color: #222;
+  color: #111;
   text-decoration: none;
 }
 .tab_content a:hover {
-  color: #222;
   font-weight: bold;
   text-decoration: underline;
 }
@@ -130,9 +129,10 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   background: #fff;
   padding: 10px 0 5px;
   text-align: center;
+  visibility:hidden;
 }
 .bottom a{
-  color: #222;
+  color: #111;
 }
 .bottom a:hover {
   font-weight: bold;
