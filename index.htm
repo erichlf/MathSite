@@ -12,11 +12,11 @@
 
         //Default Action
         $(".tab_content").hide(); //Hide all content
-        $("ul.tabs li:nth-child(2)").addClass("active").show(); //Activate first tab
+        $("ul.tabs li:first").addClass("active").show(); //Activate first tab
         $(".tab_content:first").show(); //Show first tab content
 
         //On Click Event
-        $("ul.tabs li:nth-child(n+2)").click(
+        $("ul.tabs li").click(
             function() {
                 $("ul.tabs li").removeClass("active"); //Remove any "active" class
                 $(this).addClass("active"); //Add "active" class to selected tab
@@ -36,8 +36,10 @@
 <body>
 
 <div class="container">
+  <div id="name">
+      Erich L Foster
+  </div>
   <ul class="tabs" id="top">
-    <li><a href="#Home">Erich L Foster</a></li>
     <li><a href="#Home">Home</a></li>
     <li><a href="#Research">Research</a></li>
 <!--        <li><a href="#Teaching">Teaching</a></li>-->

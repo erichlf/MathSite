@@ -17,31 +17,28 @@ h1 {
   width: 600px;
   margin: 5px auto;
 }
+div#name {
+  width: 33%;
+  font-weight: bold;
+  font-size: 1.6em;
+  text-transform:uppercase;
+  transform: translateY(85%);
+}
 .tabs {
-  float: left;
-  width: 100%;
+  float: right;
+  width: 65%;
   background: #fff;
   border-bottom: 0px solid #000;
   border-radius: 5px 5px 0 0;
 }
 ul.tabs {
-  float: left;
+  float: right;
   text-align: right;
   margin: 0;
   padding: 0 10px 0;
   position: relative;
 }
-ul.tabs#top li:first-child {
-  float: left;
-  color: #ddd;
-  font-weight: bold;
-  font-size: 1.6em;
-  text-transform:uppercase;
-  transform: translateX(-8%);
-}
-ul.tabs#top li:nth-child(n+2) {
-  position: relative;
-  transform: translateY(40%);
+ul.tabs#top li {
   text-transform:lowercase;
 }
 ul.tabs li {
