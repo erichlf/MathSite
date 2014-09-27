@@ -4,8 +4,9 @@ html body {
   background: #fff;
   margin: 0;
   padding: 0;
-  font: 14px/1.2 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #111;
+  font: 12px/1.2 "quicksand";
+  font-style: normal;
+  color: #444;
   height: 100%;
 }
 h1 {
@@ -36,10 +37,11 @@ ul.tabs#top li:first-child {
   font-weight: bold;
   font-size: 1.6em;
   text-transform:uppercase;
+  transform: translateX(-8%);
 }
 ul.tabs#top li:nth-child(n+2) {
   position: relative;
-  transform: translateY(50%);
+  transform: translateY(40%);
   text-transform:lowercase;
 }
 ul.tabs li {
@@ -53,14 +55,14 @@ ul.tabs li {
 }
 ul.tabs li a {
   text-decoration: none;
-  color: #000;
+  color: #333;
 }
 ul.tabs li a:hover {
   font-weight: bold;
 }
 html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover  {
   font-weight: bold;
-  color: #000;
+  color: #333;
 }
 .tab_container {
   width: 100%;
@@ -87,7 +89,7 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   margin: 20px 0 0 0;
 }
 .tab_content a, .tab_content a:visited {
-  color: #111;
+  color: #444;
   text-decoration: none;
 }
 .tab_content a:hover {
@@ -132,7 +134,7 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
   visibility:hidden;
 }
 .bottom a{
-  color: #111;
+  color: #444;
 }
 .bottom a:hover {
   font-weight: bold;
