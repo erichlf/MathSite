@@ -1,7 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
-
 html body {
-  background: #eee;
+  background: #ddd;
   margin: 0;
   padding: 0;
   font: 12px/1.2 "quicksand";
@@ -27,7 +25,7 @@ div#name {
 .tabs {
   float: right;
   width: 65%;
-  background: #eee;
+  background: #ddd;
   border-bottom: 0px solid #000;
   border-radius: 5px 5px 0 0;
 }
@@ -64,7 +62,7 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
 .tab_container {
   width: 100%;
   min-height: 250px ;
-  background: #eee;
+  background: #ddd;
   padding: 10px 10px;
   border-radius: 25px;
 }
@@ -108,7 +106,7 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
 .tab_content img {
   float: left;
   margin: 0 20px 0 0;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   height: 180;
   width: 120;
   padding: 1px;
@@ -125,7 +123,7 @@ html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover
 }
 .bottom {
   width: 100%;
-  background: #eee;
+  background: #ddd;
   padding: 10px 0 5px;
   text-align: center;
   visibility:hidden;
