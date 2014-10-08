@@ -12,13 +12,13 @@
 
         //Default Action
         $(".tab_content").hide(); //Hide all content
-        $("ul.tabs li:first").addClass("active").show(); //Activate first tab
+        $(".sidebar ul li:first").addClass("active").show(); //Activate first tab
         $(".tab_content:first").show(); //Show first tab content
 
         //On Click Event
-        $("ul.tabs li").click(
+        $(".sidebar ul li").click(
             function() {
-                $("ul.tabs li").removeClass("active"); //Remove any "active" class
+                $(".sidebar ul li").removeClass("active"); //Remove any "active" class
                 $(this).addClass("active"); //Add "active" class to selected tab
                 $(".tab_content").hide(); //Hide all tab content
                 var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
@@ -26,6 +26,7 @@
                 $("#Teaching").load("Teaching.htm");
                 $("#Research").load("Research.htm");
                 $("#CV").load("CV.htm");
+                $("#Links").load("links.htm");
                 return false;
             }
         );
@@ -36,67 +37,34 @@
 <body>
 
 <div class="container">
-  <div id="name">
-      Erich L Foster
-  </div>
-  <ul class="tabs" id="top">
-    <li><a href="#Home">Home</a></li>
-    <li><a href="#Research">Research</a></li>
-<!--        <li><a href="#Teaching">Teaching</a></li>-->
-    <li><a href="#CV">CV</a></li>
-<!--    <li><a href="#Calendar">Calendar</a></li>-->
-    <li><a href="#Links">Links</a></li>
-  </ul>
-  <div class="tab_container">
-    <div class="clearfix">
-      <div id="Home" class="tab_content">
-        <a href=""><img src="me.JPG" alt=""/></a>
-        <div>
-            Contact Info:<br>
-            <a href="http://www.bcamath.org">BCAM - Basque Center for Applied Mathematics</a><br>
-            Mazarredo, 14. 48009 Bilbao, Basque Country - Spain<br>
-            Email: <a href="mailto:efoster@bcamath.org">efoster@bcamath.org</a><br>
-            Phone: +34 946 567 842
+    <div class="sidebar">
+        <div id="name">
+            Erich L Foster
         </div>
-      </div>
-    </div>
-    <div id="Research" class="tab_content"></div>
-    <div id="CV" class="tab_content"></div>
-    <div id="Links" class="tab_content">
-      <h3>Academics and Research</h3>
         <ul>
-          <li><a href="http://www.bcamath.org/en/research/lines/CFDCT/general">CFD Computational Technology</a></li>
-          <li><a href="http://www.bcamath.org">BCAM - Basque Center for Applied Mathematics</a>
-          <li><a href="http://arxiv.org/find/all/1/all:+AND+Erich+Foster/0/1/0/all/0/1">My arXiv Papers</a>
-          <li><a href="http://www.math.vt.edu/people/iliescu">Traian Iliescu (My PhD Advisor)</a>
-          <li><a href="http://www.ima.umn.edu/~wangzhu">Wang Zhu (My Academic Brother)</a>
-          <li><a href="http://www.math.vt.edu/people/drwells">Dave Wells (My Academic Brother)</a>
-          <li><a href="http://www.math.vt.edu">Virginia Tech Department of Mathematics</a>
-          <li><a href="http://www.icam.vt.edu">Interdisciplinary Center for Applied Mathematics</a>
-        </ul>
-      <h3>Software</h3>
-        <ul>
-          <li><a href="http://www.bitbucket.org/erichlf">My Bitbucket Projects</a>
-          <li><a href="http://www.github.com/erichlf">My GitHub Projects</a>
-          <li><a href="http://www.github.com/VT-ICAM/ArgyrisPack">Argyris Pack</a></li>
-          <li><a href="http://www.github.com/VT-ICAM/VTthesis">VT Thesis LaTeX Class</a></li>
-          <li><a href="https://bitbucket.org/erichlf/hwset">Homework LaTeX Class</a></li>
-        </ul>
-      <h3>Unicorn</h3>
-        <ul>
-          <li><a href="https://launchpad.net/unicorn">Launchpad</a></li>
-          <li><a href="http://www.youtube.com/user/ctlabtv">Unicorn on Youtube</a></li>
-        </ul>
-      <h3>FEniCS</h3>
-        <ul>
-          <li><a href= "http://www.fenicsproject.org">Homepage</a></li>
-          <li><a href="https://launchpad.net/fenics">Launchpad</a></li>
+            <li><a href="#Home">Home</a></li>
+            <li><a href="#Research">Research</a></li>
+<!--            <li><a href="#Teaching">Teaching</a></li>-->
+            <li><a href="#CV">CV</a></li>
+<!--            <li><a href="#Calendar">Calendar</a></li>-->
+            <li><a href="#Links">Links</a></li>
         </ul>
     </div>
-    <div class="bottom">
-      <a href="http://www.bcamath.org">BCAM - Basque Center for Applied Mathematics</a>
+    <div class="content">
+        <div id="Home" class="tab_content">
+            <a href=""><img src="me.JPG" alt=""/></a>
+            <div id="contact">
+                Contact Info:<br>
+                <a href="http://www.bcamath.org">BCAM - Basque Center for Applied Mathematics</a><br>
+                Mazarredo, 14. 48009 Bilbao, Basque Country - Spain<br>
+                Email: <a href="mailto:efoster@bcamath.org">efoster@bcamath.org</a><br>
+                Phone: +34 946 567 842
+            </div>
+        </div>
+        <div id="Research" class="tab_content"></div>
+        <div id="CV" class="tab_content"></div>
+        <div id="Links" class="tab_content"></div>
     </div>
-  </div>
 </div>
 
 </body>

@@ -1,147 +1,105 @@
-html body, a {
-  background: #eee;
-  margin: 0;
-  padding: 0;
-  font: 12px/1.2 "quicksand";
-  font-style: normal;
-  color: #444;
-  height: 100%;
-  text-decoration: none;
+html body, a, a:visited {
+    background: #eee;
+    margin: 0;
+    padding: 0;
+    font: 12px/1.2 "quicksand";
+    font-style: normal;
+    color: #444;
+    height: 100%;
+    text-decoration: none;
 }
-h1 {
-  font-size: 3em;
-  margin: 20px 0;
+html body a:hover {
+    text-decoration: underline;
+    font-weight: bold;
 }
 .container {
-  width: 600px;
-  margin: 5px auto;
+    width: 820px;
+    margin: 40px auto;
 }
-div#name {
-  width: 33%;
-  font-weight: bold;
-  font-size: 1.6em;
-  text-transform:uppercase;
-  transform: translateY(85%);
+.sidebar {
+    position: fixed;
+    width: 220px;
+    float: left;
 }
-.tabs {
-  float: right;
-  width: 65%;
-  border-bottom: 0px solid #000;
-  border-radius: 5px 5px 0 0;
+.sidebar div#name {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.3em;
+    text-transform:uppercase;
+    padding: 10px 30px;
 }
-ul.tabs {
-  float: right;
-  text-align: right;
-  margin: 0;
-  padding: 0 10px 0;
-  position: relative;
+.sidebar ul {
+    float: right;
+    text-align: right;
+    padding: 5px 30px;
 }
-ul.tabs#top li {
-  text-transform:lowercase;
+.sidebar ul li {
+    list-style: none;
+    text-transform:lowercase;
 }
-ul.tabs li {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-  overflow: hidden;
-  padding: 3px 20px;
+.sidebar ul li.active, .sidebar ul li.active a, .sidebar ul li a:hover, .sidebar ul li.active a:hover {
+    font-weight: bold;
+    text-decoration: none;
 }
-ul.tabs li a:hover {
-  font-weight: bold;
-  text-decoration: none;
+.content {
+    float: right;
+    width: 600px;
+    min-height: 250px ;
+    padding: 10px 10px;
+    border-radius: 25px;
 }
-html ul.tabs li.active, html ul.tabs li.active a, html ul.tabs li.active a:hover, .bottom a:hover {
-  font-weight: bold;
-}
-.tab_container {
-  width: 100%;
-  min-height: 250px ;
-  padding: 10px 10px;
-  border-radius: 25px;
-}
-.tab_content {
-  height: 100%;
-}
-#Home div {
-  position: relative;
-  top: 50%;
-  transform: translateY(50%);
+#Home div#contact {
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);
 }
 #Home img {
-  height: 180px;
-  width: 166px;
+    height: 180px;
+    width: 166px;
 }
 .tab_content h2 {
-  font-weight: normal;
-  font-size: 1.6em;
-  margin: 20px 0 0 0;
+    font-weight: normal;
+    font-size: 1.4em;
+    text-align: center;
 }
-.tab_content a, .tab_content a:visited {
-  color: #444;
-  text-decoration: none;
-}
-.tab_content a:hover {
-  font-weight: bold;
-  text-decoration: underline;
-}
-.clearfix:after{
-  content:".";
-  display:block;
-  height:0;
-  clear:both;
-  visibility:hidden;
-}
-.clearfix {display:inline-block;}
-/* Hide from IE Mac \*/
-.clearfix {display:block;}
-/* End hide from IE Mac */
-* html .clearfix {height:1px;}
-.tab_content img {
-  float: left;
-  margin: 0 20px 0 0;
-  border: 1px solid #ddd;
-  height: 180;
-  width: 120;
-  padding: 1px;
+.content img {
+    float: left;
+    margin: 0 20px 0 0;
+    border: 1px solid #ddd;
+    height: 180;
+    width: 120;
+    padding: 1px;
 }
 .tab_content caption {
-  font-weight: bold;
-  padding: 10px 0 5px;
-  text-align: left;
+    font-weight: bold;
+    padding: 10px 0 5px;
+    text-align: left;
 }
 .tab_content h4{
-  font-weight: bold;
-  margin: 10px 0 0px 0;
-  text-align: left;
+    font-weight: bold;
+    margin: 10px 0 0px 0;
+    text-align: left;
 }
-.bottom {
-  width: 100%;
-  padding: 10px 0 5px;
-  text-align: center;
-  visibility:hidden;
-}
-.header {
-  text-align: center;
+.header { /* this is the cv header */
+    text-align: center;
 }
 .cvlinks {
-  text-align: center;
-  font-size: 0.8em;
+    text-align: center;
+    font-size: 0.8em;
 }
 .cvlinks a:before, .cvlinks a:after {
-  content: "|";
+    content: "|";
 }
 .cvtable {
-  width: 100%;
+    width: 100%;
 }
 .cvtable td {
-  padding: 0 10px 0 0;
-  vertical-align: top;
+    padding: 0 10px 0 0;
+    vertical-align: top;
 }
 .cvtable td:first-child {
-  width: 20%;
+    width: 20%;
 }
 .cvtable td:nth-child(2){
-  width: 45%;
+    width: 45%;
 }
