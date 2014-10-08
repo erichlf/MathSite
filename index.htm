@@ -32,6 +32,11 @@
         );
     });
   </script>
+  <script type="text/javascript">
+    $(window).scroll(function(event) {
+        $(".sidebar").css("margin-left", 0-$(document).scrollLeft());
+    });
+  </script>
 </head>
 
 <body>
