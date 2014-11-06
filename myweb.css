@@ -53,7 +53,6 @@ html body a:hover {
 #Home div#contact {
     position: relative;
     top: 50%;
-    transform: translateY(50%);
 }
 #Home img {
     height: 180px;
@@ -68,8 +67,6 @@ html body a:hover {
     float: left;
     margin: 0 20px 0 0;
     border: 1px solid #ddd;
-    height: 180;
-    width: 120;
     padding: 1px;
 }
 .tab_content caption {
