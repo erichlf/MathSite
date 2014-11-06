@@ -10,217 +10,236 @@
   });
 </script>
 
-<div class="header"><h2>Current Research</h2> </div>
-My research interests are centered around the development of
-<i>mathematically justified</i> models and corresponding efficient,
-accurate algorithms for <i>grand challenge problems</i> at the frontier of
-computational science and engineering. My current interest is in the
-application of these ideas to <i>climate modeling</i>, such as the
-<i>Quasi-Geostrophic Flow Equations</i> (QGE), <i>flow in porous media</i>
-with an emphasis on density dependent flow and contaminate transport.  In
-both areas I emphasize the use of <i>finite elements</i> (FE), including
-error analysis and efficient algorithms such as the <i>two-level
-method</i>.
-</br>
-<hr style="width: 100%; height: 2px;"><br>
-</br>
-<b>Wave Generation:</b></br>
-The problem of <i>wave generation</i> is complex and has many applications-- one
-such application is in the creation of artificial waves for <i>surfing</i>.
-Traditionally wave generators have used either paddles, on laboratory scale,
-or a mass of water, on larger scales, to generate waves. However, we
-consider a relatively new method of wave generation, that is, we consider an <i>underwater
-moving object</i> which displaces the water to create a wave. This idea of wave
-generation is similar to the way a <i>tsunami</i> is created, in which the wave is
-created by either an <i>underwater landslide or earthquake</i> [9]. This type of
-artificial wave generator has been recently developed at Wave Garden&copy;
-located in the Basque Country - Spain [8].  The design of such wave generators
-is generally done by trial and error. In collaboration with Enrique Zuazua,
-Denys Dutykh, and Robin Goix; our goal is to extend the work done by Nersisyan
-et al [10], where they considered the <i>optimal shape design</i> of such wave
-generators, from the 1-D case into the 2-D case.
-</br></br>
+<div class="header" id="Current Research" name="Current Research">
+    <h2>Current Research</h2> </div>
+    My research interests are centered around the development of
+    <i>mathematically justified</i> models and corresponding efficient,
+    accurate algorithms for <i>grand challenge problems</i> at the frontier of
+    computational science and engineering. My current interest is in the
+    application of these ideas to <i>climate modeling</i>, such as the
+    <i>Quasi-Geostrophic Flow Equations</i> (QGE), <i>flow in porous media</i>
+    with an emphasis on density dependent flow and contaminate transport.  In
+    both areas I emphasize the use of <i>finite elements</i> (FE), including
+    error analysis and efficient algorithms such as the <i>two-level
+    method</i>.
+    </br>
+        <hr style="width: 100%; height: 2px;"><br>
+    </br>
+<div name="Wave Generation">
+    <b>Wave Generation:</b></br>
+    The problem of <i>wave generation</i> is complex and has many applications-- one
+    such application is in the creation of artificial waves for <i>surfing</i>.
+    Traditionally wave generators have used either paddles, on laboratory scale,
+    or a mass of water, on larger scales, to generate waves. However, we
+    consider a relatively new method of wave generation, that is, we consider an <i>underwater
+    moving object</i> which displaces the water to create a wave. This idea of wave
+    generation is similar to the way a <i>tsunami</i> is created, in which the wave is
+    created by either an <i>underwater landslide or earthquake</i> [9]. This type of
+    artificial wave generator has been recently developed at Wave Garden&copy;
+    located in the Basque Country - Spain [8].  The design of such wave generators
+    is generally done by trial and error. In collaboration with Enrique Zuazua,
+    Denys Dutykh, and Robin Goix; our goal is to extend the work done by Nersisyan
+    et al [10], where they considered the <i>optimal shape design</i> of such wave
+    generators, from the 1-D case into the 2-D case.
+    </br></br>
 
-<table width="265" border="0" align="left" cellpadding="5" cellspacing="0">
-  <tr><td align="center" valign="top" style="font-size: 80%;">
-<a name="Object" href="CartesianCoordinates.png"><img src="CartesianCoordinates.png" height="150"></a>
-<b>Figure 1</b>: Ocean cross-section with moving object \(\zeta\).
-</td></tr>
-</table>
-To this end, we consider \((x,y,z)\) a Cartesian coordinate system, with \(z\)
-measuring upwards from the average water level-- letting \(\eta(x,y,t)\) be
-the height of the free surface at a time \(t\), and \(h(x,y,t) = D(x,y) +
-\zeta(x,y,t)\) the seabed profile, which is assumed to be the sum of a
-time-independent part \(D\), the seabed elevation, and a time-dependant part
-\(\zeta\), the underwater moving object (see <a href=#Object>Figure 1</a>).
-</br></br>
+    <table id="Moving Object Cross-section" name="Moving object cross-section"
+        width="265" border="0" align="left" cellpadding="5" cellspacing="0">
+        <tr><td align="center" valign="top" style="font-size: 80%;">
+            <a id="Wave Object" name="Wave Object"
+                href="CartesianCoordinates.png">
+                <img src="CartesianCoordinates.png"
+                    alt="Cross-Section of Wave Object" height="150"></a>
+            <b>Figure 1</b>: Ocean cross-section with moving object \(\zeta\).
+        </td></tr>
+    </table>
+    To this end, we consider \((x,y,z)\) a Cartesian coordinate system, with \(z\)
+    measuring upwards from the average water level-- letting \(\eta(x,y,t)\) be
+    the height of the free surface at a time \(t\), and \(h(x,y,t) = D(x,y) +
+    \zeta(x,y,t)\) the seabed profile, which is assumed to be the sum of a
+    time-independent part \(D\), the seabed elevation, and a time-dependant part
+    \(\zeta\), the underwater moving object (see <a href=#Object>Figure 1</a>).
+    </br></br>
 
-With this description of the wave generator in place the following
-Boussinesq system can be derived from the Euler equations [9,12]
-<div style="font-size: 90%;">
-\begin{equation}
-  \begin{split}
-    \mathbf{u}_t + \nabla \eta + \epsilon (\mathbf{u} \cdot \nabla) \mathbf{u}
-        &- \sigma^2\frac{h}{2}\nabla (\nabla \cdot (h \mathbf{u}_t))
-        + \sigma^2 \frac{h^2}{6}\nabla (\nabla \cdot \mathbf{u}_t)
-        - \sigma^2\frac{h}{2}\nabla \zeta_{tt}
-        = \mathcal{O}(\epsilon \sigma^2, \sigma^4) \\
-    &\qquad\eta_t+\zeta_t + \nabla \cdot [(h+\epsilon\eta)\mathbf{u}] = 0
-  \end{split}
-  \label{eqn:Peregrine}
-\end{equation}
+    With this description of the wave generator in place the following
+    Boussinesq system can be derived from the Euler equations [9,12]
+    <div name="Peregrine System" id="Peregrine System" style="font-size: 90%;">
+        \begin{equation}
+        \begin{split}
+            \mathbf{u}_t + \nabla \eta + \epsilon (\mathbf{u} \cdot \nabla) \mathbf{u}
+                &- \sigma^2\frac{h}{2}\nabla (\nabla \cdot (h \mathbf{u}_t))
+                + \sigma^2 \frac{h^2}{6}\nabla (\nabla \cdot \mathbf{u}_t)
+                - \sigma^2\frac{h}{2}\nabla \zeta_{tt}
+                = \mathcal{O}(\epsilon \sigma^2, \sigma^4) \\
+            &\qquad\eta_t+\zeta_t + \nabla \cdot [(h+\epsilon\eta)\mathbf{u}] = 0
+        \end{split}
+        \label{eqn:Peregrine}
+        \end{equation}
+    </div>
+    While this model can be discretized in a pretty straight forward manner,
+    using <i>Taylor-Hood</i> finite elements, the time required to resolve all
+    scales, when realistic parameter values are used, is unreasonable when
+    considering the wave object will need to be optimized. By not resolving all
+    scales one can save time, however stability is lost and the solution is not
+    accurate (see <a id="object cross-section" href=#Object>Figure 1</a>). Thus,
+    numerical methods which improve <i>computational time</i> while not
+    sacrificing accuracy are crucial to be able to optimize the wave object. To
+    this end, we plan on using <i>mesh adaptive stabilization</i> to improve
+    computational time, efficiency, and stability. As can be seen the initial
+    results for the stabilized \(P^1-P^1\) FE (<a id="Stabilized Solution"
+    href=#Stable>Figure 2c</a>), without adaptivity, clearly results in a
+    solution which appears to be more stable, but the size of the wave appears
+    to be smaller than the solution given by the fine mesh (<a id="Fine
+    Solution" href=#Fine>Figure 2b</a>). However, the solution for the
+    stabilized \(P^1-P^1\) FE took 50% less time as compared to the Taylor-Hood
+    FE on the same mesh.
+    <table id="Wave Generator Solutions" border="0" cellpadding="5" cellspacing="0" align="center">
+        <tr>
+            <td id="Solutions" align="center" valign="top" style="font-size: 80%;">
+            <video poster="WaveGeneratorCoarse.png" width="165" height="265" controls>
+                <source src="WaveGeneratorCoarse.webm" type="video/webm">
+                <source src="WaveGeneratorCoarse.ogv" type="video/ogg">
+                <source src="WaveGeneratorCoarse.mp4" type="video/mp4">
+                <a id="Coarse Solution" name="Coarse Solution" href="WaveGeneratorCoarse.png">
+                    <img src="WaveGeneratorCoarse.png" alt="Coarse Mesh Solution for
+                        Wave Generator" height="165" width="265"></a>
+            </video></br>
+            <b>Figure 2a</b>: Coarse mesh (\(4\,335\) DoFs).
+            </td>
+            <td align="center" valign="top" style="font-size: 80%;">
+            <video poster="WaveGeneratorFine.png" width="165" height="265" controls>
+                <source src="WaveGeneratorFine.webm" type="video/webm">
+                <source src="WaveGeneratorFine.ogv" type="video/ogg">
+                <source src="WaveGeneratorFine.mp4" type="video/mp4">
+                <img src="WaveGeneratorFine.png" height="165" width="265">
+                <a id="Fine Solution" name="Fine Solution" href="WaveGeneratorFine.png">
+                    <img src="WaveGeneratorFine.png" alt="Fine Mesh Solution for Wave
+                        Generator" height="165" width="265"></a>
+            </video></br>
+            <b>Figure 2b</b>: Fine mesh (\(28\,395\) DoFs).
+            </td>
+            <td align="center" valign="top" style="font-size: 80%;">
+            <video poster="WaveGeneratorStable.png" width="165" height="265" controls>
+                <source src="WaveGeneratorStable.webm" type="video/webm">
+                <source src="WaveGeneratorStable.ogv" type="video/ogg">
+                <source src="WaveGeneratorStable.mp4" type="video/mp4">
+                <img src="WaveGeneratorStable.png" height="165" width="265">
+                <a id="Stabilize Solution" name="Stabilized Solution" href="WaveGeneratorStable.png">
+                    <img src="WaveGeneratorStable.png" alt="Stabilized Solution for
+                        Wave Generator" height="165" width="265"></a>
+            </video></br>
+            <b>Figure 2c</b>: Stabilized solution on fine mesh (\(28\,395\) DoFs).
+            </td>
+        </tr>
+    <tr>
+        <td id="caption" colspan="3">
+        <b>Figure 2</b>:Comparison of coarse mesh using Taylor-Hood FEs; 2a, fine
+        mesh using Taylor-Hood FEs; 2b, and stabilized \(P^1-P^1\) FEs; 2c,
+        solutions to the wave generator problem, \eqref{eqn:Peregrine}, using
+        FEniCS.
+        </td>
+    </tr>
+    </table>
+    <hr style="width: 100%; height: 2px;"><br>
+    </br>
 </div>
-While this model can be discretized in a pretty straight forward manner,
-using <i>Taylor-Hood</i> finite elements, the time required to resolve all scales,
-when realistic parameter values are used, is unreasonable when considering the
-wave object will need to be optimized. By not resolving all scales one can
-save time, however stability is lost and the solution is not accurate (see
-<a href=#Object>Figure 1</a>). Thus, numerical methods which improve <i>computational
-time</i> while not sacrificing accuracy are crucial to be able to optimize the
-wave object. To this end, we plan on using <i>mesh adaptive stabilization</i> to improve
-computational time, efficiency, and stability. As can be seen the initial
-results for the stabilized \(P^1-P^1\) FE (<a href=#Stable>Figure 2c</a>), without
-adaptivity, clearly results in a solution which appears to be more stable,
-but the size of the wave appears to be smaller than the solution given by
-the fine mesh (<a href=#Fine>Figure 2b</a>). However, the solution for the stabilized
-\(P^1-P^1\) FE took 50% less time as compared to the Taylor-Hood FE on the
-same mesh.
-<table border="0" cellpadding="5" cellspacing="0" align="center">
-  <tr>
-    <td align="center" valign="top" style="font-size: 80%;">
-       <video poster="WaveGeneratorCoarse.png" width="165" height="265" controls>
-         <source src="WaveGeneratorCoarse.webm" type="video/webm">
-         <source src="WaveGeneratorCoarse.ogv" type="video/ogg">
-         <source src="WaveGeneratorCoarse.mp4" type="video/mp4">
-         <a name="Coarse" href="WaveGeneratorCoarse.png"><img src="WaveGeneratorCoarse.png" height="165" width="265"></a>
-       </video></br> 
-       <b>Figure 2a</b>: Coarse mesh (\(4\,335\) DoFs).
-     </td>
-    <td align="center" valign="top" style="font-size: 80%;">
-       <video poster="WaveGeneratorFine.png" width="165" height="265" controls>
-         <source src="WaveGeneratorFine.webm" type="video/webm">
-         <source src="WaveGeneratorFine.ogv" type="video/ogg">
-         <source src="WaveGeneratorFine.mp4" type="video/mp4">
-         <img src="WaveGeneratorFine.png" height="165" width="265">
-         <a name="Fine" href="WaveGeneratorFine.png"><img src="WaveGeneratorFine.png" height="165" width="265"></a>
-       </video></br> 
-       <b>Figure 2b</b>: Fine mesh (\(28\,395\) DoFs).
-     </td>
-    <td align="center" valign="top" style="font-size: 80%;">
-       <video poster="WaveGeneratorStable.png" width="165" height="265" controls>
-         <source src="WaveGeneratorStable.webm" type="video/webm">
-         <source src="WaveGeneratorStable.ogv" type="video/ogg">
-         <source src="WaveGeneratorStable.mp4" type="video/mp4">
-         <img src="WaveGeneratorStable.png" height="165" width="265">
-         <a name="Stable" href="WaveGeneratorStable.png"><img src="WaveGeneratorStable.png" height="165" width="265"></a>
-       </video></br> 
-       <b>Figure 2c</b>: Stabilized solution on fine mesh (\(28\,395\) DoFs).
-     </td>
-  </tr>
-  <tr>
-    <td colspan="3">
-      <b>Figure 2</b>:Comparison of coarse mesh using Taylor-Hood FEs; 2a, fine
-      mesh using Taylor-Hood FEs; 2b, and stabilized \(P^1-P^1\) FEs; 2c,
-      solutions to the wave generator problem, \eqref{eqn:Peregrine}, using
-      FEniCS.
-    </td>
-  </tr>
-</table>
-<hr style="width: 100%; height: 2px;"><br>
-</br>
-
-<b>Climate Modeling:</b></br>
-<table border="0" cellpadding="5" cellspacing="0">
-  <tr><td align="center" valign="top" style="font-size: 80%;">
-  <a name="OceanGyres" href="OceanGyres.jpg">
-    <img src="OceanGyres.jpg" height="165" width="265">
-  </a>
-  <b>Figure 3</b>: Subpolar and Subtropical Gyres of the Mid-Atlantic
-  </td>
-  <td valign="top">
-The <i>Quasi-Geostrophic</i> equations (QGE) are simplified models of large
-scale oceanic or atmospheric flows and are often used in climate modeling
-[3]. The QGE describe a double gyre system that are
-characteristic of mid-latitude oceans [3,8,11] (See <a href="#OceanGyres">Figure 3</a>).  
-For the QGE, we consider the pure streamfunction form
-  </td>
-  </tr>
-</table>
-\begin{equation}
-  -\Delta \psi_t + Re^{-1} \Delta^2 \psi + J(\psi, \Delta \psi) 
-    - Ro^{-1} \psi_x = Ro^{-1} F,
-  \label{eqn:QGE}
-\end{equation}
-where \(\psi\), \(Re\), and \(Ro\) are the streamfunction, the Reynolds number,
-and Rossby number, respectively, while
-\[
-  J(\psi,\Delta \psi) = \psi_x\, \Delta \psi_y - \psi_y\, \Delta \psi_x
-\]
-is the Jacobian and \(F\) is the external forcing. To completely specify
-the system we consider the boundary conditions \(\psi = \frac{\partial
-\psi}{\partial \mathbf{n}} = 0\). In [5] we applied a finite
-element (FE) discretization to the QGE. This is the first time a \(C^1\)
-FE has been used to discretize the QGE. In [5] we presented
-rigorous error analysis and numerical experiments.</p>
-Most FE discretizations of the QGE are for the
-streamfunction-voriticity formulation of the QGE, and the reason is
-simple. The pure streamfunction form is a fourth order PDE,
-requiring \(C^1\) FEs for conforming FEs, such as the Argyris element.
-However, the advantage of the pure streamfunction formulation is the
-reduction of two variables to a single variable.  In addition to
-algorithm development, I have proven in [5], for the first
-time, optimal error estimates for the FE discretizations of the
-QGE.</br></br>
-<b>Theorem</b> Let \(\psi\) be the solution to the <i>stationary QGE</i> and
-  \(\psi^h\) be the solution of the FE formulation of stationary QGE.  Assume
-  that the small data condition is satisfied:
-  \begin{equation}
-    Re^{-2} \, Ro
-    \geq \Gamma_1 \, \| F \|_{-2} .
-    \label{eqn:small_data_condition_dual}
-  \end{equation}
-  Furthermore, assume that \(\psi\in H^6(\Omega) \cap H^2_0(\Omega)\).  Then
-  there exist positive constants \(C_0, \, C_1 \text{ and } C_2\) that can
-  depend on \(Re\), \(Ro\), \(\Gamma_1\), \(F\), but <i>not</i> on the
-  mesh size \(h\),
-  such that
-  \begin{align}
-    |\psi - \psi^h|_2 &\le C_2 \, h^4 , \label{eqn:H2Error} \\
-    |\psi - \psi^h|_1 &\le C_1 \, h^5 , \label{eqn:H1Error} \\
-    \|\psi - \psi^h\|_0 &\le C_0 \, h^6 . \label{eqn:L2Error}
-  \end{align}
-</br>
-While in [7] I proved a similar result for the time-dependent QGE.
-<table border="0" cellpadding="5" cellspacing="0" align="center">
-  <tr>
-    <td align="center" valign="top" style="font-size: 80%;">
-       <video poster="QGERe451Ro3_205E-3N64K100_psi.png" width="165" height="265" controls>
-         <source src="QGERe451Ro3_205E-3N64K100_psi.webm" type="video/webm">
-         <source src="QGERe451Ro3_205E-3N64K100_psi.ogv" type="video/ogg">
-         <source src="QGERe451Ro3_205E-3N64K100_psi.mp4" type="video/mp4">
-         <img src="QGERe451Ro3_205E-3N64K100_psi.png" height="165" width="265">
-         </video></br> 
-       <b>Figure 4a</b>: Streamfunction, \(\psi\).
-     </td>
-    <td align="center" valign="top" style="font-size: 80%;">
-       <video poster="QGERe451Ro3_205E-3N64K100_q.png" width="165" height="265" controls>
-         <source src="QGERe451Ro3_205E-3N64K100_q.webm" type="video/webm">
-         <source src="QGERe451Ro3_205E-3N64K100_q.ogv" type="video/ogg">
-         <source src="QGERe451Ro3_205E-3N64K100_q.mp4" type="video/mp4">
-         <img src="QGERe451Ro3_205E-3N64K100_q.png" height="165" width="265">
-         </video></br>
-       <b>Figure 4b</b>:Vorticity, \(q\).
-     </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-       <b>Figure 4</b>: Double gyre simulatioin of QGE, \(Re=451,\,
-       Ro=3.205\times 10^{-3}\).
-    </td>
-  </tr>
-</table>
-<hr style="width: 100%; height: 2px;"><br>
-</br>
+<div id="Climate Modelling Research" name="Climate Modelling Research">
+    <b>Climate Modeling:</b></br>
+    <table id="Ocean Gyres" width="265" border="0" align="left" cellpadding="5" cellspacing="0">
+        <tr><td id="Ocean Gyres" align="center" valign="top" style="font-size: 80%;">
+                <a id="Ocean Gyres" name="Ocean Gyres" href="OceanGyres.jpg">
+                    <img src="OceanGyres.jpg" alt="Gyres of the Ocean" height="165" width="265">
+                </a>
+                <b>Figure 3</b>: Subpolar and Subtropical Gyres of the Mid-Atlantic
+            </td>
+        </tr>
+    </table>
+    The <i>Quasi-Geostrophic</i> equation (QGE), also known as the <i>Barotropic
+    Vorticity</i> Equation (BVE), is a simplified model of large scale oceanic
+    or atmospheric flows and are often used in climate modeling [3]. The QGE
+    describe a double gyre system that are characteristic of mid-latitude oceans
+    [3,8,11] (See <a id="Ocean Gyres" href="#OceanGyres">Figure 3</a>).  For the
+    QGE, we consider the pure streamfunction form
+    <div id="QGE">
+        \begin{equation}
+        -\Delta \psi_t + Re^{-1} \Delta^2 \psi + J(\psi, \Delta \psi)
+            - Ro^{-1} \psi_x = Ro^{-1} F,
+        \label{eqn:QGE}
+        \end{equation}
+        where \(\psi\), \(Re\), and \(Ro\) are the streamfunction, the Reynolds number,
+        and Rossby number, respectively, while
+        \[
+        J(\psi,\Delta \psi) = \psi_x\, \Delta \psi_y - \psi_y\, \Delta \psi_x
+        \]
+    </div>
+    is the Jacobian and \(F\) is the external forcing. To completely specify
+    the system we consider the boundary conditions \(\psi = \frac{\partial
+    \psi}{\partial \mathbf{n}} = 0\). In [5] we applied a finite
+    element (FE) discretization to the QGE. This is the first time a \(C^1\)
+    FE has been used to discretize the QGE. In [5] we presented
+    rigorous error analysis and numerical experiments.</p>
+    Most FE discretizations of the QGE are for the
+    streamfunction-voriticity formulation of the QGE, and the reason is
+    simple. The pure streamfunction form is a fourth order PDE,
+    requiring \(C^1\) FEs for conforming FEs, such as the Argyris element.
+    However, the advantage of the pure streamfunction formulation is the
+    reduction of two variables to a single variable.  In addition to
+    algorithm development, I have proven in [5], for the first
+    time, optimal error estimates for the FE discretizations of the
+    QGE.</br></br>
+    <div id="Rate of Convergence Theorem">
+        <b>Theorem</b> Let \(\psi\) be the solution to the <i>stationary QGE</i> and
+        \(\psi^h\) be the solution of the FE formulation of stationary QGE.  Assume
+        that the small data condition is satisfied:
+        \begin{equation}
+            Re^{-2} \, Ro
+            \geq \Gamma_1 \, \| F \|_{-2} .
+            \label{eqn:small_data_condition_dual}
+        \end{equation}
+        Furthermore, assume that \(\psi\in H^6(\Omega) \cap H^2_0(\Omega)\).  Then
+        there exist positive constants \(C_0, \, C_1 \text{ and } C_2\) that can
+        depend on \(Re\), \(Ro\), \(\Gamma_1\), \(F\), but <i>not</i> on the
+        mesh size \(h\),
+        such that
+        \begin{align}
+            |\psi - \psi^h|_2 &\le C_2 \, h^4 , \label{eqn:H2Error} \\
+            |\psi - \psi^h|_1 &\le C_1 \, h^5 , \label{eqn:H1Error} \\
+            \|\psi - \psi^h\|_0 &\le C_0 \, h^6 . \label{eqn:L2Error}
+        \end{align}
+        </br>
+        While in [7] I proved a similar result for the time-dependent QGE.
+    </div>
+    <table id="Double Gyre Simulations" border="0" cellpadding="5" cellspacing="0" align="center">
+        <tr id="Simulations">
+            <td id="Streamfunction" align="center" valign="top" style="font-size: 80%;">
+            <video poster="QGERe451Ro3_205E-3N64K100_psi.png" width="165" height="265" controls>
+                <source src="QGERe451Ro3_205E-3N64K100_psi.webm" type="video/webm">
+                <source src="QGERe451Ro3_205E-3N64K100_psi.ogv" type="video/ogg">
+                <source src="QGERe451Ro3_205E-3N64K100_psi.mp4" type="video/mp4">
+                <img src="QGERe451Ro3_205E-3N64K100_psi.png" alt="QGE Double Gyre Streamfunction" height="165" width="265">
+                </video></br>
+            <b>Figure 4a</b>: Streamfunction, \(\psi\).
+            </td>
+            <td id="Vorticity" align="center" valign="top" style="font-size: 80%;">
+            <video poster="QGERe451Ro3_205E-3N64K100_q.png" width="165" height="265" controls>
+                <source src="QGERe451Ro3_205E-3N64K100_q.webm" type="video/webm">
+                <source src="QGERe451Ro3_205E-3N64K100_q.ogv" type="video/ogg">
+                <source src="QGERe451Ro3_205E-3N64K100_q.mp4" type="video/mp4">
+                <img src="QGERe451Ro3_205E-3N64K100_q.png" alt="QGE Double Gyre Vorticity" height="165" width="265">
+                </video></br>
+            <b>Figure 4b</b>:Vorticity, \(q\).
+            </td>
+        </tr>
+        <tr>
+            <td id="caption" colspan="2">
+            <b>Figure 4</b>: Double gyre simulatioin of QGE, \(Re=451,\,
+                Ro=3.205\times 10^{-3}\).
+            </td>
+        </tr>
+    </table>
+    <hr style="width: 100%; height: 2px;"><br>
+    </br>
+</div>
 
 <textarea id="bibtex_input" style="display:none;">
 
@@ -440,5 +459,5 @@ While in [7] I proved a similar result for the time-dependent QGE.
   <div class="header">
   <h3>References</h3>
   </div>
-  <ol><div id="bibtex_display"></div></ol>
+  <ol><div id="bibtex_display" name="bibtex_display"></div></ol>
 </div>
